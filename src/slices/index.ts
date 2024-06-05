@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 export const components = {
   amenities: dynamic(() => import("./Amenities")),
   call_to_action: dynamic(() => import("./CallToAction")),
+  events_and_function: dynamic(() => import("./EventsAndFunction")),
   hero: dynamic(() => import("./Hero")),
   navigation_item: dynamic(() => import("./NavigationItem")),
   rich_text: dynamic(() => import("./RichText")),
