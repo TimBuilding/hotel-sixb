@@ -135,22 +135,111 @@ export type PageDocument<Lang extends string = string> =
 export type AllDocumentTypes = NavigationDocument | PageDocument;
 
 /**
- * Primary content in *Hero → Primary*
+ * Primary content in *Amenities → Primary*
  */
-export interface HeroSliceDefaultPrimary {
+export interface AmenitiesSliceDefaultPrimary {
   /**
-   * Hero field in *Hero → Primary*
+   * Title field in *Amenities → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: amenities.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *Amenities → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: amenities.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Image1 field in *Amenities → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.hero
+   * - **API ID Path**: amenities.primary.image1
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  hero: prismic.ImageField<never>;
+  image1: prismic.ImageField<never>;
+
+  /**
+   * Image2 field in *Amenities → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: amenities.primary.image2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image2: prismic.ImageField<never>;
+
+  /**
+   * Image3 field in *Amenities → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: amenities.primary.image3
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image3: prismic.ImageField<never>;
+
+  /**
+   * ButtonText field in *Amenities → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: amenities.primary.buttontext
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  buttontext: prismic.KeyTextField;
+
+  /**
+   * ButtonUrl field in *Amenities → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: amenities.primary.buttonurl
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  buttonurl: prismic.LinkField;
 }
 
 /**
- * Default variation for Hero Slice
+ * Default variation for Amenities Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AmenitiesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AmenitiesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Amenities*
+ */
+type AmenitiesSliceVariation = AmenitiesSliceDefault;
+
+/**
+ * Amenities Shared Slice
+ *
+ * - **API ID**: `amenities`
+ * - **Description**: Amenities
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AmenitiesSlice = prismic.SharedSlice<
+  "amenities",
+  AmenitiesSliceVariation
+>;
+
+/**
  * Primary content in *CallToAction → Primary*
  */
 export interface CallToActionSliceDefaultPrimary {
@@ -212,33 +301,13 @@ export interface CallToActionSliceDefaultPrimary {
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-<<<<<<< HEAD
-export type HeroSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<HeroSliceDefaultPrimary>,
-=======
 export type CallToActionSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<CallToActionSliceDefaultPrimary>,
->>>>>>> eec8b68 (TIM-237 feat(home): add call to action)
   never
 >;
 
 /**
-<<<<<<< HEAD
- * Slice variation for *Hero*
- */
-type HeroSliceVariation = HeroSliceDefault;
-
-/**
- * Hero Shared Slice
- *
- * - **API ID**: `hero`
- * - **Description**: Hero
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
-=======
  * Slice variation for *CallToAction*
  */
 type CallToActionSliceVariation = CallToActionSliceDefault;
@@ -254,7 +323,48 @@ export type CallToActionSlice = prismic.SharedSlice<
   "call_to_action",
   CallToActionSliceVariation
 >;
->>>>>>> eec8b68 (TIM-237 feat(home): add call to action)
+
+/**
+ * Primary content in *Hero → Primary*
+ */
+export interface HeroSliceDefaultPrimary {
+  /**
+   * Hero field in *Hero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.hero
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  hero: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Hero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Hero*
+ */
+type HeroSliceVariation = HeroSliceDefault;
+
+/**
+ * Hero Shared Slice
+ *
+ * - **API ID**: `hero`
+ * - **Description**: Hero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
  * Primary content in *NavigationItem → Primary*
@@ -373,17 +483,18 @@ declare module "@prismicio/client" {
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
-<<<<<<< HEAD
-      HeroSlice,
-      HeroSliceDefaultPrimary,
-      HeroSliceVariation,
-      HeroSliceDefault,
-=======
+      AmenitiesSlice,
+      AmenitiesSliceDefaultPrimary,
+      AmenitiesSliceVariation,
+      AmenitiesSliceDefault,
       CallToActionSlice,
       CallToActionSliceDefaultPrimary,
       CallToActionSliceVariation,
       CallToActionSliceDefault,
->>>>>>> eec8b68 (TIM-237 feat(home): add call to action)
+      HeroSlice,
+      HeroSliceDefaultPrimary,
+      HeroSliceVariation,
+      HeroSliceDefault,
       NavigationItemSlice,
       NavigationItemSliceDefaultPrimary,
       NavigationItemSliceVariation,
