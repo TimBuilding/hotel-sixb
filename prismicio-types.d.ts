@@ -356,6 +356,161 @@ export type RichTextSlice = prismic.SharedSlice<
   RichTextSliceVariation
 >;
 
+/**
+ * Primary content in *RoomsHomepage → Primary*
+ */
+export interface RoomsHomepageSliceDefaultPrimary {
+  /**
+   * Title field in *RoomsHomepage → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rooms_homepage.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *RoomsHomepage → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rooms_homepage.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * ButtonText field in *RoomsHomepage → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rooms_homepage.primary.buttontext
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  buttontext: prismic.KeyTextField;
+
+  /**
+   * ButtonLink field in *RoomsHomepage → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rooms_homepage.primary.buttonlink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  buttonlink: prismic.LinkField;
+
+  /**
+   * RoomImage field in *RoomsHomepage → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rooms_homepage.primary.roomimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  roomimage: prismic.ImageField<never>;
+}
+
+/**
+ * RoomsHomepage-Right variation for RoomsHomepage Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RoomsHomepageSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<RoomsHomepageSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *RoomsHomepage → Primary*
+ */
+export interface RoomsHomepageSliceRoomsHomepageRightPrimary {
+  /**
+   * Title field in *RoomsHomepage → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rooms_homepage.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *RoomsHomepage → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rooms_homepage.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * ButtonLink field in *RoomsHomepage → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rooms_homepage.primary.buttonlink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  buttonlink: prismic.LinkField;
+
+  /**
+   * ButtonText field in *RoomsHomepage → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rooms_homepage.primary.buttontext
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  buttontext: prismic.KeyTextField;
+
+  /**
+   * RoomImage field in *RoomsHomepage → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rooms_homepage.primary.roomimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  roomimage: prismic.ImageField<never>;
+}
+
+/**
+ * RoomsHomepage-Left variation for RoomsHomepage Slice
+ *
+ * - **API ID**: `roomsHomepageRight`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RoomsHomepageSliceRoomsHomepageRight = prismic.SharedSliceVariation<
+  "roomsHomepageRight",
+  Simplify<RoomsHomepageSliceRoomsHomepageRightPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *RoomsHomepage*
+ */
+type RoomsHomepageSliceVariation =
+  | RoomsHomepageSliceDefault
+  | RoomsHomepageSliceRoomsHomepageRight;
+
+/**
+ * RoomsHomepage Shared Slice
+ *
+ * - **API ID**: `rooms_homepage`
+ * - **Description**: RoomsHomepage
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RoomsHomepageSlice = prismic.SharedSlice<
+  "rooms_homepage",
+  RoomsHomepageSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -392,6 +547,12 @@ declare module "@prismicio/client" {
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      RoomsHomepageSlice,
+      RoomsHomepageSliceDefaultPrimary,
+      RoomsHomepageSliceRoomsHomepageRightPrimary,
+      RoomsHomepageSliceVariation,
+      RoomsHomepageSliceDefault,
+      RoomsHomepageSliceRoomsHomepageRight,
     };
   }
 }

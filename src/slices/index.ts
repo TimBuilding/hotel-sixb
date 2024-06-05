@@ -7,4 +7,5 @@ export const components = {
   call_to_action: dynamic(() => import("./CallToAction")),
   navigation_item: dynamic(() => import("./NavigationItem")),
   rich_text: dynamic(() => import("./RichText")),
+  rooms_homepage: dynamic(() => import("./RoomsHomepage")),
 };
