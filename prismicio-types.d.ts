@@ -151,18 +151,81 @@ export interface HeroSliceDefaultPrimary {
 
 /**
  * Default variation for Hero Slice
+ * Primary content in *CallToAction → Primary*
+ */
+export interface CallToActionSliceDefaultPrimary {
+  /**
+   * Title field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Content field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * ButtonText field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.primary.buttontext
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  buttontext: prismic.KeyTextField;
+
+  /**
+   * ButtonUrl field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.primary.buttonurl
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  buttonurl: prismic.LinkField;
+
+  /**
+   * BackgroundImage field in *CallToAction → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.primary.backgroundimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  backgroundimage: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for CallToAction Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
+<<<<<<< HEAD
 export type HeroSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<HeroSliceDefaultPrimary>,
+=======
+export type CallToActionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CallToActionSliceDefaultPrimary>,
+>>>>>>> eec8b68 (TIM-237 feat(home): add call to action)
   never
 >;
 
 /**
+<<<<<<< HEAD
  * Slice variation for *Hero*
  */
 type HeroSliceVariation = HeroSliceDefault;
@@ -175,6 +238,23 @@ type HeroSliceVariation = HeroSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+=======
+ * Slice variation for *CallToAction*
+ */
+type CallToActionSliceVariation = CallToActionSliceDefault;
+
+/**
+ * CallToAction Shared Slice
+ *
+ * - **API ID**: `call_to_action`
+ * - **Description**: CallToAction
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CallToActionSlice = prismic.SharedSlice<
+  "call_to_action",
+  CallToActionSliceVariation
+>;
+>>>>>>> eec8b68 (TIM-237 feat(home): add call to action)
 
 /**
  * Primary content in *NavigationItem → Primary*
@@ -293,10 +373,17 @@ declare module "@prismicio/client" {
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
+<<<<<<< HEAD
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+=======
+      CallToActionSlice,
+      CallToActionSliceDefaultPrimary,
+      CallToActionSliceVariation,
+      CallToActionSliceDefault,
+>>>>>>> eec8b68 (TIM-237 feat(home): add call to action)
       NavigationItemSlice,
       NavigationItemSliceDefaultPrimary,
       NavigationItemSliceVariation,

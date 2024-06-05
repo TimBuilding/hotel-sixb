@@ -1,0 +1,62 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Swap your routine for relaxation in style at Tagaytay Hotel SixB. Our comfortable rooms boast breathtaking views of Taal Lake, the perfect place to unwind and create lasting memories. Experience the authentic flavors of Korea with our delicious Samgyupsal, or savor other delectable meals prepared with care by our friendly staff, who are always happy to ensure your stay is comfortable and enjoyable.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"buttontext": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Inquire Now"
+			},
+			"buttonurl": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io"
+				}
+			},
+			"backgroundimage": {
+				"url": "https://images.unsplash.com/photo-1599230396418-09e63394e3b0?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyM3x8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzE3NTQ5NzIzfDA&ixlib=rb-4.0.3&q=85",
+				"alt": "green leaves on white surface",
+				"origin": {
+					"id": "U1pdTX42sXc",
+					"url": "https://images.unsplash.com/photo-1599230396418-09e63394e3b0?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyM3x8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzE3NTQ5NzIzfDA&ixlib=rb-4.0.3&q=85",
+					"width": 4000,
+					"height": 6000
+				},
+				"width": 4000,
+				"height": 6000,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Unwind in Comfort Overlooking Taal Lake \nat Tagaytay Hotel SixB"
+			}
+		},
+		"items": []
+	}
+]
