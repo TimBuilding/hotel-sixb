@@ -9,10 +9,16 @@ const Navigation = async () => {
 
   return (
     <nav>
-      <Button>
-        <Menu />
-      </Button>
-      <PrismicNextImage field={navigation.data.logo} width={182} height={36} />
+      <div className="flex flex-row items-center justify-center">
+        <Button variant={"ghost"} size={"icon"}>
+          <Menu />
+        </Button>
+        <PrismicNextImage
+          field={navigation.data.logo}
+          width={182}
+          height={36}
+        />
+      </div>
 
       <ul>
         {/* Renders top-level links. */}
