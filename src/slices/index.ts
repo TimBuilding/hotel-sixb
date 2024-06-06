@@ -10,4 +10,5 @@ export const components = {
   navigation_item: dynamic(() => import("./NavigationItem")),
   rich_text: dynamic(() => import("./RichText")),
   rooms_homepage: dynamic(() => import("./RoomsHomepage")),
+  testimonials: dynamic(() => import("./Testimonials")),
 };
