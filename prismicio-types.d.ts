@@ -559,6 +559,78 @@ export type RichTextSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *RoomCard → Primary*
+ */
+export interface RoomSliceDefaultPrimary {
+  /**
+   * Title field in *RoomCard → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Price field in *RoomCard → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room.primary.price
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  price: prismic.KeyTextField;
+
+  /**
+   * RoomLink field in *RoomCard → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room.primary.roomlink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  roomlink: prismic.LinkField;
+
+  /**
+   * Image field in *RoomCard → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for RoomCard Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RoomSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<RoomSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *RoomCard*
+ */
+type RoomSliceVariation = RoomSliceDefault;
+
+/**
+ * RoomCard Shared Slice
+ *
+ * - **API ID**: `room`
+ * - **Description**: Room
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RoomSlice = prismic.SharedSlice<"room", RoomSliceVariation>;
+
+/**
  * Primary content in *RoomsHomepage → Primary*
  */
 export interface RoomsHomepageSliceDefaultPrimary {
@@ -829,6 +901,10 @@ declare module "@prismicio/client" {
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      RoomSlice,
+      RoomSliceDefaultPrimary,
+      RoomSliceVariation,
+      RoomSliceDefault,
       RoomsHomepageSlice,
       RoomsHomepageSliceDefaultPrimary,
       RoomsHomepageSliceRoomsHomepageRightPrimary,

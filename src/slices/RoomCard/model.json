@@ -1,0 +1,49 @@
+{
+  "id": "room",
+  "type": "SharedSlice",
+  "name": "RoomCard",
+  "description": "Room",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "price": {
+          "type": "Text",
+          "config": {
+            "label": "Price",
+            "placeholder": ""
+          }
+        },
+        "roomlink": {
+          "type": "Link",
+          "config": {
+            "label": "RoomLink",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

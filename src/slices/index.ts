@@ -11,4 +11,5 @@ export const components = {
   rich_text: dynamic(() => import("./RichText")),
   rooms_homepage: dynamic(() => import("./RoomsHomepage")),
   testimonials: dynamic(() => import("./Testimonials")),
+  room: dynamic(() => import("./RoomCard")),
 };
