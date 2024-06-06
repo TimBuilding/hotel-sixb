@@ -325,6 +325,101 @@ export type CallToActionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *EventsAndFunction → Primary*
+ */
+export interface EventsAndFunctionSliceDefaultPrimary {
+  /**
+   * Title field in *EventsAndFunction → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *EventsAndFunction → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * ButtonText field in *EventsAndFunction → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function.primary.buttontext
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  buttontext: prismic.KeyTextField;
+
+  /**
+   * ButtonUrl field in *EventsAndFunction → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function.primary.buttonurl
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  buttonurl: prismic.LinkField;
+
+  /**
+   * Image1 field in *EventsAndFunction → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function.primary.image1
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image1: prismic.ImageField<never>;
+
+  /**
+   * Image2 field in *EventsAndFunction → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function.primary.image2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image2: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for EventsAndFunction Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EventsAndFunctionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<EventsAndFunctionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *EventsAndFunction*
+ */
+type EventsAndFunctionSliceVariation = EventsAndFunctionSliceDefault;
+
+/**
+ * EventsAndFunction Shared Slice
+ *
+ * - **API ID**: `events_and_function`
+ * - **Description**: EventsAndFunction
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EventsAndFunctionSlice = prismic.SharedSlice<
+  "events_and_function",
+  EventsAndFunctionSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -491,6 +586,10 @@ declare module "@prismicio/client" {
       CallToActionSliceDefaultPrimary,
       CallToActionSliceVariation,
       CallToActionSliceDefault,
+      EventsAndFunctionSlice,
+      EventsAndFunctionSliceDefaultPrimary,
+      EventsAndFunctionSliceVariation,
+      EventsAndFunctionSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
