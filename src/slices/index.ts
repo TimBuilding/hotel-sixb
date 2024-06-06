@@ -9,4 +9,5 @@ export const components = {
   hero: dynamic(() => import("./Hero")),
   navigation_item: dynamic(() => import("./NavigationItem")),
   rich_text: dynamic(() => import("./RichText")),
+  rooms_homepage: dynamic(() => import("./RoomsHomepage")),
 };
