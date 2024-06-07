@@ -751,6 +751,90 @@ export interface RoomSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * RoomSize field in *RoomCard → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room.primary.roomsize
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  roomsize: prismic.KeyTextField;
+
+  /**
+   * Bed field in *RoomCard → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room.primary.bed
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  bed: prismic.KeyTextField;
+
+  /**
+   * HeadCount field in *RoomCard → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room.primary.headcount
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headcount: prismic.KeyTextField;
+
+  /**
+   * KidsCount field in *RoomCard → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room.primary.kidscount
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  kidscount: prismic.KeyTextField;
+
+  /**
+   * Breakfast field in *RoomCard → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: room.primary.breakfast
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  breakfast: prismic.BooleanField;
+
+  /**
+   * Veranda field in *RoomCard → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: room.primary.veranda
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  veranda: prismic.BooleanField;
+
+  /**
+   * Lakeview field in *RoomCard → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: room.primary.lakeview
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  lakeview: prismic.BooleanField;
+
+  /**
+   * Balcony field in *RoomCard → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: room.primary.balcony
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  balcony: prismic.BooleanField;
 }
 
 /**

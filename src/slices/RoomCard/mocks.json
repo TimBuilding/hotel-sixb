@@ -42,6 +42,42 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"roomsize": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "22.6 sqm"
+			},
+			"breakfast": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"bed": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "2 Queen Size Bed"
+			},
+			"veranda": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"headcount": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Good for 4 adults &"
+			},
+			"lakeview": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"kidscount": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "2 Kids"
+			},
+			"balcony": {
+				"__TYPE__": "BooleanContent",
+				"value": true
 			}
 		},
 		"items": []

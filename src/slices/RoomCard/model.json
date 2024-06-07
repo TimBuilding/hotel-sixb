@@ -41,6 +41,70 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "roomsize": {
+          "type": "Text",
+          "config": {
+            "label": "RoomSize",
+            "placeholder": ""
+          }
+        },
+        "bed": {
+          "type": "Text",
+          "config": {
+            "label": "Bed",
+            "placeholder": ""
+          }
+        },
+        "headcount": {
+          "type": "Text",
+          "config": {
+            "label": "HeadCount",
+            "placeholder": ""
+          }
+        },
+        "kidscount": {
+          "type": "Text",
+          "config": {
+            "label": "KidsCount",
+            "placeholder": ""
+          }
+        },
+        "breakfast": {
+          "type": "Boolean",
+          "config": {
+            "label": "Breakfast",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "veranda": {
+          "type": "Boolean",
+          "config": {
+            "label": "Veranda",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "lakeview": {
+          "type": "Boolean",
+          "config": {
+            "label": "Lakeview",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "balcony": {
+          "type": "Boolean",
+          "config": {
+            "label": "Balcony",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
         }
       },
       "items": {}
