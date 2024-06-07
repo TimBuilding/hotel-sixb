@@ -837,6 +837,254 @@ export type CallToActionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Dining → Primary*
+ */
+export interface DiningSliceDefaultPrimary {
+  /**
+   * DiningTab1 field in *Dining → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningtab1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  diningtab1: prismic.KeyTextField;
+
+  /**
+   * DiningTab2 field in *Dining → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningtab2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  diningtab2: prismic.KeyTextField;
+
+  /**
+   * DiningTab3 field in *Dining → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningtab3
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  diningtab3: prismic.KeyTextField;
+
+  /**
+   * DiningMainImage1 field in *Dining → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningmainimage1
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  diningmainimage1: prismic.ImageField<never>;
+
+  /**
+   * DiningName1 field in *Dining → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningname1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  diningname1: prismic.KeyTextField;
+
+  /**
+   * DiningDescription1 field in *Dining → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningdescription1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  diningdescription1: prismic.KeyTextField;
+
+  /**
+   * DiningButtonLink1 field in *Dining → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningbuttonlink1
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  diningbuttonlink1: prismic.LinkField;
+
+  /**
+   * DiningButtonText1 field in *Dining → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningbuttontext1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  diningbuttontext1: prismic.KeyTextField;
+
+  /**
+   * DiningImagesTab1 field in *Dining → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningimagestab1[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  diningimagestab1: prismic.GroupField<
+    Simplify<DiningDocumentDataDiningimagestab1Item>
+  >;
+
+  /**
+   * DiningMainImage2 field in *Dining → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningmainimage2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  diningmainimage2: prismic.ImageField<never>;
+
+  /**
+   * DiningName2 field in *Dining → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningname2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  diningname2: prismic.KeyTextField;
+
+  /**
+   * DiningDescription2 field in *Dining → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningdescription2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  diningdescription2: prismic.KeyTextField;
+
+  /**
+   * DiningButtonLink2 field in *Dining → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningbuttonlink2
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  diningbuttonlink2: prismic.LinkField;
+
+  /**
+   * DiningButtonText2 field in *Dining → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningbuttontext2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  diningbuttontext2: prismic.KeyTextField;
+
+  /**
+   * DiningImagesTab2 field in *Dining → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningimagestab2[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  diningimagestab2: prismic.GroupField<
+    Simplify<DiningDocumentDataDiningimagestab2Item>
+  >;
+
+  /**
+   * DiningMainImage3 field in *Dining → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningmainimage3
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  diningmainimage3: prismic.ImageField<never>;
+
+  /**
+   * DiningName3 field in *Dining → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningname3
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  diningname3: prismic.KeyTextField;
+
+  /**
+   * DiningDescription3 field in *Dining → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningdescription3
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  diningdescription3: prismic.KeyTextField;
+
+  /**
+   * DiningButtonLink3 field in *Dining → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningbuttonlink3
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  diningbuttonlink3: prismic.LinkField;
+
+  /**
+   * DiningButtonText3 field in *Dining → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningbuttontext3
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  diningbuttontext3: prismic.KeyTextField;
+
+  /**
+   * DiningImagesTab3 field in *Dining → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.primary.diningimagestab3[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  diningimagestab3: prismic.GroupField<
+    Simplify<DiningDocumentDataDiningimagestab3Item>
+  >;
+}
+
+/**
+ * Default variation for Dining Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DiningSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<DiningSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Dining*
+ */
+type DiningSliceVariation = DiningSliceDefault;
+
+/**
+ * Dining Shared Slice
+ *
+ * - **API ID**: `dining`
+ * - **Description**: Dining
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DiningSlice = prismic.SharedSlice<"dining", DiningSliceVariation>;
+
+/**
  * Primary content in *EventsAndFunction → Primary*
  */
 export interface EventsAndFunctionSliceDefaultPrimary {
@@ -2300,6 +2548,13 @@ declare module "@prismicio/client" {
       CallToActionSliceDefaultPrimary,
       CallToActionSliceVariation,
       CallToActionSliceDefault,
+      DiningSlice,
+      DiningDocumentDataDiningimagestab1Item,
+      DiningDocumentDataDiningimagestab2Item,
+      DiningDocumentDataDiningimagestab3Item,
+      DiningSliceDefaultPrimary,
+      DiningSliceVariation,
+      DiningSliceDefault,
       EventsAndFunctionSlice,
       EventsAndFunctionSliceDefaultPrimary,
       EventsAndFunctionSliceVariation,

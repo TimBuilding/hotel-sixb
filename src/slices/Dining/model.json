@@ -1,0 +1,202 @@
+{
+  "id": "dining",
+  "type": "SharedSlice",
+  "name": "Dining",
+  "description": "Dining",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "diningtab1": {
+          "type": "Text",
+          "config": {
+            "label": "DiningTab1",
+            "placeholder": ""
+          }
+        },
+        "diningtab2": {
+          "type": "Text",
+          "config": {
+            "label": "DiningTab2",
+            "placeholder": ""
+          }
+        },
+        "diningtab3": {
+          "type": "Text",
+          "config": {
+            "label": "DiningTab3",
+            "placeholder": ""
+          }
+        },
+        "diningmainimage1": {
+          "type": "Image",
+          "config": {
+            "label": "DiningMainImage1",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "diningname1": {
+          "type": "Text",
+          "config": {
+            "label": "DiningName1",
+            "placeholder": ""
+          }
+        },
+        "diningdescription1": {
+          "type": "Text",
+          "config": {
+            "label": "DiningDescription1",
+            "placeholder": ""
+          }
+        },
+        "diningbuttonlink1": {
+          "type": "Link",
+          "config": {
+            "label": "DiningButtonLink1",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "diningbuttontext1": {
+          "type": "Text",
+          "config": {
+            "label": "DiningButtonText1",
+            "placeholder": ""
+          }
+        },
+        "diningimagestab1": {
+          "type": "Group",
+          "config": {
+            "label": "DiningImagesTab1",
+            "repeat": true,
+            "fields": {
+              "diningimage1": {
+                "type": "Image",
+                "config": {
+                  "label": "DiningImage1",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        },
+        "diningmainimage2": {
+          "type": "Image",
+          "config": {
+            "label": "DiningMainImage2",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "diningname2": {
+          "type": "Text",
+          "config": {
+            "label": "DiningName2",
+            "placeholder": ""
+          }
+        },
+        "diningdescription2": {
+          "type": "Text",
+          "config": {
+            "label": "DiningDescription2",
+            "placeholder": ""
+          }
+        },
+        "diningbuttonlink2": {
+          "type": "Link",
+          "config": {
+            "label": "DiningButtonLink2",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "diningbuttontext2": {
+          "type": "Text",
+          "config": {
+            "label": "DiningButtonText2",
+            "placeholder": ""
+          }
+        },
+        "diningimagestab2": {
+          "type": "Group",
+          "config": {
+            "label": "DiningImagesTab2",
+            "repeat": true,
+            "fields": {
+              "diningimage1": {
+                "type": "Image",
+                "config": {
+                  "label": "DiningImage1",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        },
+        "diningmainimage3": {
+          "type": "Image",
+          "config": {
+            "label": "DiningMainImage3",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "diningname3": {
+          "type": "Text",
+          "config": {
+            "label": "DiningName3",
+            "placeholder": ""
+          }
+        },
+        "diningdescription3": {
+          "type": "Text",
+          "config": {
+            "label": "DiningDescription3",
+            "placeholder": ""
+          }
+        },
+        "diningbuttonlink3": {
+          "type": "Link",
+          "config": {
+            "label": "DiningButtonLink3",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "diningbuttontext3": {
+          "type": "Text",
+          "config": {
+            "label": "DiningButtonText3",
+            "placeholder": ""
+          }
+        },
+        "diningimagestab3": {
+          "type": "Group",
+          "config": {
+            "label": "DiningImagesTab3",
+            "repeat": true,
+            "fields": {
+              "diningimage1": {
+                "type": "Image",
+                "config": {
+                  "label": "DiningImage1",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -6,6 +6,7 @@ export const components = {
   amenities: dynamic(() => import("./Amenities")),
   amenities_images: dynamic(() => import("./AmenitiesImages")),
   call_to_action: dynamic(() => import("./CallToAction")),
+  dining: dynamic(() => import("./Dining")),
   events_and_function: dynamic(() => import("./EventsAndFunction")),
   events_and_function_section: dynamic(
     () => import("./EventsAndFunctionSection"),
