@@ -21,8 +21,8 @@ const RoomsHomepage = ({slice}: RoomsHomepageProps): JSX.Element => {
         >
             <div className="md:hidden">
                 <div
-                    className={cn(slice.variation === 'default' ? 'flex-row' : 'flex-row-reverse ', "flex gap-4 bg-zinc-100")}>
-                    <div className={cn(slice.variation === 'default' ? 'p-8' : 'px-3 py-8', "flex flex-col gap-5")}>
+                    className={cn(slice.variation === 'default' ? 'flex-row' : 'flex-row-reverse ', "flex gap-10 bg-zinc-100")}>
+                    <div className={cn(slice.variation === 'default' ? 'p-8' : 'px-3 py-8', "flex flex-col gap-5 w-1/2")}>
                         <h1 className="font-semibold text-sm">{slice.primary.title}</h1>
                         <h1 className="font-bold text-base ">{slice.primary.description}</h1>
                         <Button className="rounded-3xl bg-[#947901] py-1 px-4">
@@ -31,13 +31,13 @@ const RoomsHomepage = ({slice}: RoomsHomepageProps): JSX.Element => {
                             </PrismicNextLink>
                         </Button>
                     </div>
-                    <PrismicNextImage field={slice.primary.roomimage} className="object-cover shadow w-[205px] h-auto"/>
+                    <PrismicNextImage field={slice.primary.roomimage} className="object-cover shadow w-1/2 h-auto"/>
                 </div>
             </div>
             <div className="hidden md:block">
                 <div
-                    className={cn(slice.variation === 'default' ? 'flex-row' : 'flex-row-reverse', "flex gap-4 bg-zinc-100 items-center justify-between")}>
-                    <div className="flex flex-col gap-6 p-16 xl:p-24">
+                    className={cn(slice.variation === 'default' ? 'flex-row' : 'flex-row-reverse', "flex bg-zinc-100 items-center justify-between")}>
+                    <div className={cn(slice.variation === 'default' ? 'px-16' : 'px-8', "flex flex-col gap-6 w-1/2")}>
                         <h1 className="font-semibold text-2xl">{slice.primary.title}</h1>
                         <h1 className="font-bold text-3xl text-pretty ">{slice.primary.description}</h1>
                         <Button className="rounded-3xl bg-[#947901] w-44">
@@ -46,7 +46,7 @@ const RoomsHomepage = ({slice}: RoomsHomepageProps): JSX.Element => {
                             </PrismicNextLink>
                         </Button>
                     </div>
-                    <PrismicNextImage field={slice.primary.roomimage} className="object-cover shadow w-[630px] h-auto"/>
+                    <PrismicNextImage field={slice.primary.roomimage} className="object-cover shadow w-1/2 h-auto"/>
                 </div>
             </div>
         </section>
