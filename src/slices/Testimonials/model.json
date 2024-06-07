@@ -12,31 +12,59 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "title": {
+        "title1": {
           "type": "Text",
           "config": {
-            "label": "Title",
+            "label": "Title1",
             "placeholder": ""
           }
         },
-        "subtitle": {
+        "subtitle1": {
           "type": "Text",
           "config": {
-            "label": "SubTitle ",
+            "label": "SubTitle1",
             "placeholder": ""
           }
         },
-        "testimony": {
+        "testimony1": {
           "type": "Text",
           "config": {
-            "label": "Testimony",
+            "label": "Testimony1",
             "placeholder": ""
           }
         },
-        "witness": {
+        "witness1": {
           "type": "Text",
           "config": {
-            "label": "Witness",
+            "label": "Witness1",
+            "placeholder": ""
+          }
+        },
+        "testimony2": {
+          "type": "Text",
+          "config": {
+            "label": "Testimony2",
+            "placeholder": ""
+          }
+        },
+        "witness2": {
+          "type": "Text",
+          "config": {
+            "label": "Witness2",
+            "placeholder": ""
+          }
+        },
+        "testimony3": {
+          "type": "Text",
+          "config": {
+            "label": "Testimony3",
+            "placeholder": ""
+          }
+        },
+        "witness3": {
+          "type": "Text",
+          "config": {
+            "label": "Witness3",
             "placeholder": ""
           }
         }

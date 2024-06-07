@@ -1054,44 +1054,84 @@ export type RoomsSectionSlice = prismic.SharedSlice<
  */
 export interface TestimonialsSliceDefaultPrimary {
   /**
-   * Title field in *Testimonials → Primary*
+   * Title1 field in *Testimonials → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: testimonials.primary.title
+   * - **API ID Path**: testimonials.primary.title1
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  title: prismic.KeyTextField;
+  title1: prismic.KeyTextField;
 
   /**
-   * SubTitle  field in *Testimonials → Primary*
+   * SubTitle1 field in *Testimonials → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: testimonials.primary.subtitle
+   * - **API ID Path**: testimonials.primary.subtitle1
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  subtitle: prismic.KeyTextField;
+  subtitle1: prismic.KeyTextField;
 
   /**
-   * Testimony field in *Testimonials → Primary*
+   * Testimony1 field in *Testimonials → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: testimonials.primary.testimony
+   * - **API ID Path**: testimonials.primary.testimony1
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  testimony: prismic.KeyTextField;
+  testimony1: prismic.KeyTextField;
 
   /**
-   * Witness field in *Testimonials → Primary*
+   * Witness1 field in *Testimonials → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: testimonials.primary.witness
+   * - **API ID Path**: testimonials.primary.witness1
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  witness: prismic.KeyTextField;
+  witness1: prismic.KeyTextField;
+
+  /**
+   * Testimony2 field in *Testimonials → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.primary.testimony2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  testimony2: prismic.KeyTextField;
+
+  /**
+   * Witness2 field in *Testimonials → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.primary.witness2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  witness2: prismic.KeyTextField;
+
+  /**
+   * Testimony3 field in *Testimonials → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.primary.testimony3
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  testimony3: prismic.KeyTextField;
+
+  /**
+   * Witness3 field in *Testimonials → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.primary.witness3
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  witness3: prismic.KeyTextField;
 }
 
 /**
