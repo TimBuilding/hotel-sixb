@@ -115,6 +115,7 @@ const Dining = ({ slice }: DiningProps): JSX.Element => {
                   //@ts-ignore
                   return (
                     <PrismicNextImage
+                      key={item.id}
                       field={item.diningimage1}
                       className="rounded-2xl w-auto h-auto "
                     />
@@ -151,6 +152,7 @@ const Dining = ({ slice }: DiningProps): JSX.Element => {
                   //@ts-ignore
                   return (
                     <PrismicNextImage
+                      key={item.id}
                       field={item.diningimage1}
                       className="rounded-2xl w-auto h-auto "
                     />
@@ -222,6 +224,7 @@ const Dining = ({ slice }: DiningProps): JSX.Element => {
                   //@ts-ignore
                   return (
                     <PrismicNextImage
+                      key={item.id}
                       field={item.diningimage1}
                       className="rounded-2xl w-[283px] h-auto"
                     />
@@ -260,6 +263,7 @@ const Dining = ({ slice }: DiningProps): JSX.Element => {
                   //@ts-ignore
                   return (
                     <PrismicNextImage
+                      key={item.id}
                       field={item.diningimage1}
                       className="rounded-2xl w-[283px] h-auto"
                     />
@@ -298,6 +302,7 @@ const Dining = ({ slice }: DiningProps): JSX.Element => {
                   //@ts-ignore
                   return (
                     <PrismicNextImage
+                      key={item.id}
                       field={item.diningimage1}
                       className="rounded-2xl w-[283px] h-auto"
                     />
