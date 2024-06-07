@@ -35,7 +35,7 @@ const RoomsSection = async ({
     >
       <div className="grid grid-cols-2 max-w-5xl w-full mx-auto gap-5 md:gap-16 px-6 pb-10 md:pb-16">
         {rooms.data.slices.map((room) => (
-          <div className="shadow-lg w-full md:max-w-lg rounded-2xl">
+          <div key={room.id} className="shadow-lg w-full md:max-w-lg rounded-2xl">
             <PrismicNextImage
               field={room.primary.image}
               className="md:h-64 h-44 object-cover w-full rounded-t-2xl"
