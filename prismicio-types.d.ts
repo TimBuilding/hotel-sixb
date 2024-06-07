@@ -477,6 +477,61 @@ export type AmenitiesSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *AmenitiesImages → Primary*
+ */
+export interface AmenitiesImagesSliceDefaultPrimary {
+  /**
+   * Title field in *AmenitiesImages → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: amenities_images.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Gallery field in *AmenitiesImages → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: amenities_images.primary.gallery[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  gallery: prismic.GroupField<Simplify<AmenitiesImagesDocumentDataGalleryItem>>;
+}
+
+/**
+ * Default variation for AmenitiesImages Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AmenitiesImagesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AmenitiesImagesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *AmenitiesImages*
+ */
+type AmenitiesImagesSliceVariation = AmenitiesImagesSliceDefault;
+
+/**
+ * AmenitiesImages Shared Slice
+ *
+ * - **API ID**: `amenities_images`
+ * - **Description**: AmenitiesImages
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AmenitiesImagesSlice = prismic.SharedSlice<
+  "amenities_images",
+  AmenitiesImagesSliceVariation
+>;
+
+/**
  * Primary content in *CallToAction → Primary*
  */
 export interface CallToActionSliceDefaultPrimary {
@@ -1857,6 +1912,11 @@ declare module "@prismicio/client" {
       AmenitiesSliceDefaultPrimary,
       AmenitiesSliceVariation,
       AmenitiesSliceDefault,
+      AmenitiesImagesSlice,
+      AmenitiesImagesDocumentDataGalleryItem,
+      AmenitiesImagesSliceDefaultPrimary,
+      AmenitiesImagesSliceVariation,
+      AmenitiesImagesSliceDefault,
       CallToActionSlice,
       CallToActionSliceDefaultPrimary,
       CallToActionSliceVariation,
