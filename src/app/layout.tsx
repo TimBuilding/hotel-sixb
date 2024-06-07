@@ -17,9 +17,9 @@ export default function RootLayout({
     <html lang="en">
       <PrismicProvider client={client}>
         <body className="flex flex-col items-center w-full justify-between min-h-screen">
-          <div className="h-full w-full ">
+          <div className="h-full w-full">
             <Navigation />
-            <main className="bg-[#F5F5F5]">{children}</main>
+            <main className="bg-[#F5F5F5] pb-10">{children}</main>
           </div>
           <Footer />
           <PrismicPreview repositoryName={repositoryName} />

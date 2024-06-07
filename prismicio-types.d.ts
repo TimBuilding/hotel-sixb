@@ -4,6 +4,71 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type AmenitiesDocumentDataSlicesSlice = PageTitleSlice | AmenitiesImagesSlice;
+
+/**
+ * Content for Amenities documents
+ */
+interface AmenitiesDocumentData {
+  /**
+   * Slice Zone field in *Amenities*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: amenities.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<AmenitiesDocumentDataSlicesSlice> /**
+   * Meta Description field in *Amenities*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: amenities.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Amenities*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: amenities.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Amenities*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: amenities.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Amenities document from Prismic
+ *
+ * - **API ID**: `amenities`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AmenitiesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<AmenitiesDocumentData>,
+    "amenities",
+    Lang
+  >;
+
 type EventsandfunctionsDocumentDataSlicesSlice = EventsAndFunctionSectionSlice;
 
 /**
@@ -364,6 +429,7 @@ export type RoomsDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<RoomsDocumentData>, "rooms", Lang>;
 
 export type AllDocumentTypes =
+  | AmenitiesDocument
   | EventsandfunctionsDocument
   | HomePageDocument
   | NavigationDocument
@@ -1889,6 +1955,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      AmenitiesDocument,
+      AmenitiesDocumentData,
+      AmenitiesDocumentDataSlicesSlice,
       EventsandfunctionsDocument,
       EventsandfunctionsDocumentData,
       EventsandfunctionsDocumentDataSlicesSlice,

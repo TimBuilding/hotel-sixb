@@ -15,6 +15,7 @@ const routes: prismic.ClientConfig["routes"] = [
   { type: "home_page", path: "/" },
   { type: "room", path: "/rooms" },
   { type: "eventsandfunctions", path: "/events-function" },
+  { type: "amenities", path: "/amenities" },
   { type: "roomdetails", path: "/room/:uid" },
 ];
 

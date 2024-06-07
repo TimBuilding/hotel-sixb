@@ -17,7 +17,7 @@ const AmenitiesImages = ({ slice }: AmenitiesImagesProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="bg-white w-full max-w-5xl py-7 md:px-16 px-7 mx-auto">
+      <div className="bg-white w-full max-w-5xl pt-7 pb-12 md:px-16 px-7 mx-auto">
         <h2 className="text-[#947901] text-xl font-semibold">
           {slice.primary.title}
         </h2>
@@ -26,7 +26,7 @@ const AmenitiesImages = ({ slice }: AmenitiesImagesProps): JSX.Element => {
             <PrismicNextImage
               key={item.id}
               field={item.image}
-              className="w-full rounded-2xl h-56 object-cover md:h-96"
+              className="w-full rounded-2xl h-56 object-cover md:h-[600px]"
             />
           ))}
         </div>
