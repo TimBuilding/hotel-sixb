@@ -190,6 +190,71 @@ interface RoomDocumentData {
 export type RoomDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<RoomDocumentData>, "room", Lang>;
 
+type RoomdetailsDocumentDataSlicesSlice = RoomInformationSlice;
+
+/**
+ * Content for RoomDetails documents
+ */
+interface RoomdetailsDocumentData {
+  /**
+   * Slice Zone field in *RoomDetails*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: roomdetails.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<RoomdetailsDocumentDataSlicesSlice> /**
+   * Meta Description field in *RoomDetails*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: roomdetails.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *RoomDetails*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: roomdetails.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *RoomDetails*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: roomdetails.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * RoomDetails document from Prismic
+ *
+ * - **API ID**: `roomdetails`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type RoomdetailsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<RoomdetailsDocumentData>,
+    "roomdetails",
+    Lang
+  >;
+
 type RoomsDocumentDataSlicesSlice = RoomSlice;
 
 /**
@@ -224,6 +289,7 @@ export type AllDocumentTypes =
   | HomePageDocument
   | NavigationDocument
   | RoomDocument
+  | RoomdetailsDocument
   | RoomsDocument;
 
 /**
@@ -1091,6 +1157,285 @@ type RoomSliceVariation = RoomSliceDefault;
 export type RoomSlice = prismic.SharedSlice<"room", RoomSliceVariation>;
 
 /**
+ * Default variation for RoomImages Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RoomImagesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *RoomImages*
+ */
+type RoomImagesSliceVariation = RoomImagesSliceDefault;
+
+/**
+ * RoomImages Shared Slice
+ *
+ * - **API ID**: `room_images`
+ * - **Description**: RoomImages
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RoomImagesSlice = prismic.SharedSlice<
+  "room_images",
+  RoomImagesSliceVariation
+>;
+
+/**
+ * Primary content in *RoomInformation → Primary*
+ */
+export interface RoomInformationSliceDefaultPrimary {
+  /**
+   * Title field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_information.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Price field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_information.primary.price
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  price: prismic.KeyTextField;
+
+  /**
+   * RoomSize field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_information.primary.roomsize
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  roomsize: prismic.KeyTextField;
+
+  /**
+   * Bed field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_information.primary.bed
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  bed: prismic.KeyTextField;
+
+  /**
+   * HeadCount field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_information.primary.headcount
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  headcount: prismic.KeyTextField;
+
+  /**
+   * KidsCount field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_information.primary.kidscount
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  kidscount: prismic.KeyTextField;
+
+  /**
+   * BreakFast field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: room_information.primary.breakfast
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  breakfast: prismic.BooleanField;
+
+  /**
+   * Veranda field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: room_information.primary.veranda
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  veranda: prismic.BooleanField;
+
+  /**
+   * Lakeview field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: room_information.primary.lakeview
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  lakeview: prismic.BooleanField;
+
+  /**
+   * Balcony field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: room_information.primary.balcony
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  balcony: prismic.BooleanField;
+
+  /**
+   * CheckInTime field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_information.primary.checkintime
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  checkintime: prismic.KeyTextField;
+
+  /**
+   * CheckOutTime field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_information.primary.checkouttime
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  checkouttime: prismic.KeyTextField;
+
+  /**
+   * FreeWiFi field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_information.primary.freewifi
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  freewifi: prismic.KeyTextField;
+
+  /**
+   * FreeParking field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_information.primary.freeparking
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  freeparking: prismic.KeyTextField;
+
+  /**
+   * OutdoorInfinityPool field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_information.primary.outdoorinfinitypool
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  outdoorinfinitypool: prismic.KeyTextField;
+
+  /**
+   * HotShower field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_information.primary.hotshower
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  hotshower: prismic.KeyTextField;
+
+  /**
+   * Minibar field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_information.primary.minibar
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  minibar: prismic.KeyTextField;
+
+  /**
+   * Water field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_information.primary.water
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  water: prismic.KeyTextField;
+
+  /**
+   * Coffee field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_information.primary.coffee
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  coffee: prismic.KeyTextField;
+
+  /**
+   * Kettle field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_information.primary.kettle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  kettle: prismic.KeyTextField;
+
+  /**
+   * Restaurants field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_information.primary.restaurants
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  restaurants: prismic.RichTextField;
+}
+
+/**
+ * Default variation for RoomInformation Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RoomInformationSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<RoomInformationSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *RoomInformation*
+ */
+type RoomInformationSliceVariation = RoomInformationSliceDefault;
+
+/**
+ * RoomInformation Shared Slice
+ *
+ * - **API ID**: `room_information`
+ * - **Description**: RoomInformation
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RoomInformationSlice = prismic.SharedSlice<
+  "room_information",
+  RoomInformationSliceVariation
+>;
+
+/**
  * Primary content in *RoomsHomepage → Primary*
  */
 export interface RoomsHomepageSliceDefaultPrimary {
@@ -1409,6 +1754,9 @@ declare module "@prismicio/client" {
       RoomDocument,
       RoomDocumentData,
       RoomDocumentDataSlicesSlice,
+      RoomdetailsDocument,
+      RoomdetailsDocumentData,
+      RoomdetailsDocumentDataSlicesSlice,
       RoomsDocument,
       RoomsDocumentData,
       RoomsDocumentDataSlicesSlice,
@@ -1449,6 +1797,13 @@ declare module "@prismicio/client" {
       RoomSliceDefaultPrimary,
       RoomSliceVariation,
       RoomSliceDefault,
+      RoomImagesSlice,
+      RoomImagesSliceVariation,
+      RoomImagesSliceDefault,
+      RoomInformationSlice,
+      RoomInformationSliceDefaultPrimary,
+      RoomInformationSliceVariation,
+      RoomInformationSliceDefault,
       RoomsHomepageSlice,
       RoomsHomepageSliceDefaultPrimary,
       RoomsHomepageSliceRoomsHomepageRightPrimary,

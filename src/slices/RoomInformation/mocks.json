@@ -1,0 +1,134 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"price": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "7,000 / Night"
+			},
+			"roomsize": {
+				"__TYPE__": "FieldContent",
+				"value": "safe",
+				"type": "Text"
+			},
+			"bed": {
+				"__TYPE__": "FieldContent",
+				"value": "garden",
+				"type": "Text"
+			},
+			"headcount": {
+				"__TYPE__": "FieldContent",
+				"value": "each",
+				"type": "Text"
+			},
+			"kidscount": {
+				"__TYPE__": "FieldContent",
+				"value": "accurate",
+				"type": "Text"
+			},
+			"breakfast": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"veranda": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"lakeview": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"balcony": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"checkintime": {
+				"__TYPE__": "FieldContent",
+				"value": "cloud",
+				"type": "Text"
+			},
+			"checkouttime": {
+				"__TYPE__": "FieldContent",
+				"value": "free",
+				"type": "Text"
+			},
+			"freewifi": {
+				"__TYPE__": "FieldContent",
+				"value": "earth",
+				"type": "Text"
+			},
+			"freeparking": {
+				"__TYPE__": "FieldContent",
+				"value": "energy",
+				"type": "Text"
+			},
+			"outdoorinfinitypool": {
+				"__TYPE__": "FieldContent",
+				"value": "industrial",
+				"type": "Text"
+			},
+			"hotshower": {
+				"__TYPE__": "FieldContent",
+				"value": "promised",
+				"type": "Text"
+			},
+			"minibar": {
+				"__TYPE__": "FieldContent",
+				"value": "popular",
+				"type": "Text"
+			},
+			"water": {
+				"__TYPE__": "FieldContent",
+				"value": "part",
+				"type": "Text"
+			},
+			"coffee": {
+				"__TYPE__": "FieldContent",
+				"value": "construction",
+				"type": "Text"
+			},
+			"kettle": {
+				"__TYPE__": "FieldContent",
+				"value": "brass",
+				"type": "Text"
+			},
+			"restaurants": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Mr.Kimchi Korean Restaurant",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "The Ladle (The House of Original Sinigang)",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Hotel SixB’s Cafe & Pasalubong Center",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Deluxe Lakeview Room"
+			}
+		},
+		"items": []
+	}
+]

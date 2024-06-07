@@ -1,0 +1,176 @@
+{
+  "id": "room_information",
+  "type": "SharedSlice",
+  "name": "RoomInformation",
+  "description": "RoomInformation",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "price": {
+          "type": "Text",
+          "config": {
+            "label": "Price",
+            "placeholder": ""
+          }
+        },
+        "roomsize": {
+          "type": "Text",
+          "config": {
+            "label": "RoomSize",
+            "placeholder": ""
+          }
+        },
+        "bed": {
+          "type": "Text",
+          "config": {
+            "label": "Bed",
+            "placeholder": ""
+          }
+        },
+        "headcount": {
+          "type": "Text",
+          "config": {
+            "label": "HeadCount",
+            "placeholder": ""
+          }
+        },
+        "kidscount": {
+          "type": "Text",
+          "config": {
+            "label": "KidsCount",
+            "placeholder": ""
+          }
+        },
+        "breakfast": {
+          "type": "Boolean",
+          "config": {
+            "label": "BreakFast",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "veranda": {
+          "type": "Boolean",
+          "config": {
+            "label": "Veranda",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "lakeview": {
+          "type": "Boolean",
+          "config": {
+            "label": "Lakeview",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "balcony": {
+          "type": "Boolean",
+          "config": {
+            "label": "Balcony",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "checkintime": {
+          "type": "Text",
+          "config": {
+            "label": "CheckInTime",
+            "placeholder": ""
+          }
+        },
+        "checkouttime": {
+          "type": "Text",
+          "config": {
+            "label": "CheckOutTime",
+            "placeholder": ""
+          }
+        },
+        "freewifi": {
+          "type": "Text",
+          "config": {
+            "label": "FreeWiFi",
+            "placeholder": ""
+          }
+        },
+        "freeparking": {
+          "type": "Text",
+          "config": {
+            "label": "FreeParking",
+            "placeholder": ""
+          }
+        },
+        "outdoorinfinitypool": {
+          "type": "Text",
+          "config": {
+            "label": "OutdoorInfinityPool",
+            "placeholder": ""
+          }
+        },
+        "hotshower": {
+          "type": "Text",
+          "config": {
+            "label": "HotShower",
+            "placeholder": ""
+          }
+        },
+        "minibar": {
+          "type": "Text",
+          "config": {
+            "label": "Minibar",
+            "placeholder": ""
+          }
+        },
+        "water": {
+          "type": "Text",
+          "config": {
+            "label": "Water",
+            "placeholder": ""
+          }
+        },
+        "coffee": {
+          "type": "Text",
+          "config": {
+            "label": "Coffee",
+            "placeholder": ""
+          }
+        },
+        "kettle": {
+          "type": "Text",
+          "config": {
+            "label": "Kettle",
+            "placeholder": ""
+          }
+        },
+        "restaurants": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Restaurants",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "room_images",
+  "type": "SharedSlice",
+  "name": "RoomImages",
+  "description": "RoomImages",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}
