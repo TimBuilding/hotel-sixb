@@ -1,0 +1,152 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Events and Function"
+			},
+			"subtitle": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Elevate Your Occasions: Creating Lasting Impressions, One Event at a Time"
+			},
+			"numberofguests": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Accommodates 35-40 Guests"
+			},
+			"cateringoptions": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Catering Options"
+			},
+			"wifi": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Free Wifi"
+			},
+			"eventimage1": {
+				"url": "https://images.unsplash.com/photo-1583875762487-5f8f7c718d14?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxiaXJ0aGRheXxlbnwwfHx8fDE3MTc3Mjk4MTJ8MA&ixlib=rb-4.0.3&q=85",
+				"alt": "happy birthday balloons with happy birthday text",
+				"origin": {
+					"id": "18N4okmWccM",
+					"url": "https://images.unsplash.com/photo-1583875762487-5f8f7c718d14?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxiaXJ0aGRheXxlbnwwfHx8fDE3MTc3Mjk4MTJ8MA&ixlib=rb-4.0.3&q=85",
+					"width": 3456,
+					"height": 5184
+				},
+				"width": 3456,
+				"height": 5184,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"eventname1": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Birthday Package"
+			},
+			"eventimage2": {
+				"url": "https://images.unsplash.com/photo-1550005809-91ad75fb315f?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8d2VkZGluZ3xlbnwwfHx8fDE3MTc3MzA5Mzh8MA&ixlib=rb-4.0.3&q=85",
+				"alt": "woman holding beige-petaled flower bouquet",
+				"origin": {
+					"id": "30UOqDM5QW0",
+					"url": "https://images.unsplash.com/photo-1550005809-91ad75fb315f?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8d2VkZGluZ3xlbnwwfHx8fDE3MTc3MzA5Mzh8MA&ixlib=rb-4.0.3&q=85",
+					"width": 2996,
+					"height": 2000
+				},
+				"width": 2996,
+				"height": 2000,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"eventname2": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Wedding Package"
+			},
+			"projector": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Projector & Speaker"
+			},
+			"restroom": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Separate Restrooms for Men & Women"
+			},
+			"functionroom": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Function Room with complimentary Coffee and Water"
+			},
+			"eventimage3": {
+				"__TYPE__": "ImageContent",
+				"url": "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw0fHxldmVudHMlMjByb29tfGVufDB8fHx8MTcxNzczMjQzNHww&ixlib=rb-4.0.3&q=85",
+				"alt": "formal dinner table setting",
+				"origin": {
+					"id": "m8YjB0noWiY",
+					"url": "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw0fHxldmVudHMlMjByb29tfGVufDB8fHx8MTcxNzczMjQzNHww&ixlib=rb-4.0.3&q=85",
+					"width": 5885,
+					"height": 3802
+				},
+				"width": 5885,
+				"height": 3802,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"thumbnails": {}
+			},
+			"eventname3": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Function Room"
+			},
+			"security": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "24-hour Security"
+			},
+			"parking": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Secure Parking"
+			},
+			"staffsupport": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Dedicated Staff Support"
+			},
+			"buttontext": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Inquire Now"
+			}
+		},
+		"items": []
+	}
+]

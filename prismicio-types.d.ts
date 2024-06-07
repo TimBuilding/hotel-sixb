@@ -512,6 +512,232 @@ export type EventsAndFunctionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *EventsAndFunctionSection → Primary*
+ */
+export interface EventsAndFunctionSectionSliceDefaultPrimary {
+  /**
+   * Title field in *EventsAndFunctionSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function_section.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * SubTitle field in *EventsAndFunctionSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function_section.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * EventImage1 field in *EventsAndFunctionSection → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function_section.primary.eventimage1
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  eventimage1: prismic.ImageField<never>;
+
+  /**
+   * EventName1 field in *EventsAndFunctionSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function_section.primary.eventname1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eventname1: prismic.KeyTextField;
+
+  /**
+   * NumberOfGuests field in *EventsAndFunctionSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function_section.primary.numberofguests
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  numberofguests: prismic.KeyTextField;
+
+  /**
+   * CateringOptions field in *EventsAndFunctionSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function_section.primary.cateringoptions
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cateringoptions: prismic.KeyTextField;
+
+  /**
+   * Wifi field in *EventsAndFunctionSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function_section.primary.wifi
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  wifi: prismic.KeyTextField;
+
+  /**
+   * EventImage2 field in *EventsAndFunctionSection → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function_section.primary.eventimage2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  eventimage2: prismic.ImageField<never>;
+
+  /**
+   * EventName2 field in *EventsAndFunctionSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function_section.primary.eventname2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eventname2: prismic.KeyTextField;
+
+  /**
+   * Projector field in *EventsAndFunctionSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function_section.primary.projector
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  projector: prismic.KeyTextField;
+
+  /**
+   * Restroom field in *EventsAndFunctionSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function_section.primary.restroom
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  restroom: prismic.KeyTextField;
+
+  /**
+   * FunctionRoom field in *EventsAndFunctionSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function_section.primary.functionroom
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  functionroom: prismic.KeyTextField;
+
+  /**
+   * EventImage3 field in *EventsAndFunctionSection → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function_section.primary.eventimage3
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  eventimage3: prismic.ImageField<never>;
+
+  /**
+   * EventName3 field in *EventsAndFunctionSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function_section.primary.eventname3
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eventname3: prismic.KeyTextField;
+
+  /**
+   * Security field in *EventsAndFunctionSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function_section.primary.security
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  security: prismic.KeyTextField;
+
+  /**
+   * StaffSupport field in *EventsAndFunctionSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function_section.primary.staffsupport
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  staffsupport: prismic.KeyTextField;
+
+  /**
+   * Parking field in *EventsAndFunctionSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function_section.primary.parking
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  parking: prismic.KeyTextField;
+
+  /**
+   * ButtonLink field in *EventsAndFunctionSection → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function_section.primary.buttonlink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  buttonlink: prismic.LinkField;
+
+  /**
+   * ButtonText field in *EventsAndFunctionSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_and_function_section.primary.buttontext
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  buttontext: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for EventsAndFunctionSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EventsAndFunctionSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<EventsAndFunctionSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *EventsAndFunctionSection*
+ */
+type EventsAndFunctionSectionSliceVariation =
+  EventsAndFunctionSectionSliceDefault;
+
+/**
+ * EventsAndFunctionSection Shared Slice
+ *
+ * - **API ID**: `events_and_function_section`
+ * - **Description**: EventsAndFunctionSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EventsAndFunctionSectionSlice = prismic.SharedSlice<
+  "events_and_function_section",
+  EventsAndFunctionSectionSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -1199,6 +1425,10 @@ declare module "@prismicio/client" {
       EventsAndFunctionSliceDefaultPrimary,
       EventsAndFunctionSliceVariation,
       EventsAndFunctionSliceDefault,
+      EventsAndFunctionSectionSlice,
+      EventsAndFunctionSectionSliceDefaultPrimary,
+      EventsAndFunctionSectionSliceVariation,
+      EventsAndFunctionSectionSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,

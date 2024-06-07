@@ -6,12 +6,15 @@ export const components = {
   amenities: dynamic(() => import("./Amenities")),
   call_to_action: dynamic(() => import("./CallToAction")),
   events_and_function: dynamic(() => import("./EventsAndFunction")),
+  events_and_function_section: dynamic(
+    () => import("./EventsAndFunctionSection"),
+  ),
   hero: dynamic(() => import("./Hero")),
   navigation_item: dynamic(() => import("./NavigationItem")),
   page_title: dynamic(() => import("./PageTitle")),
   rich_text: dynamic(() => import("./RichText")),
-  rooms_homepage: dynamic(() => import("./RoomsHomepage")),
-  testimonials: dynamic(() => import("./Testimonials")),
   room: dynamic(() => import("./RoomCard")),
+  rooms_homepage: dynamic(() => import("./RoomsHomepage")),
   rooms_section: dynamic(() => import("./RoomsSection")),
+  testimonials: dynamic(() => import("./Testimonials")),
 };

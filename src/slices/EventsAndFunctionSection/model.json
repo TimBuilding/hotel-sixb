@@ -1,0 +1,156 @@
+{
+  "id": "events_and_function_section",
+  "type": "SharedSlice",
+  "name": "EventsAndFunctionSection",
+  "description": "EventsAndFunctionSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "SubTitle",
+            "placeholder": ""
+          }
+        },
+        "eventimage1": {
+          "type": "Image",
+          "config": {
+            "label": "EventImage1",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "eventname1": {
+          "type": "Text",
+          "config": {
+            "label": "EventName1",
+            "placeholder": ""
+          }
+        },
+        "numberofguests": {
+          "type": "Text",
+          "config": {
+            "label": "NumberOfGuests",
+            "placeholder": ""
+          }
+        },
+        "cateringoptions": {
+          "type": "Text",
+          "config": {
+            "label": "CateringOptions",
+            "placeholder": ""
+          }
+        },
+        "wifi": {
+          "type": "Text",
+          "config": {
+            "label": "Wifi",
+            "placeholder": ""
+          }
+        },
+        "eventimage2": {
+          "type": "Image",
+          "config": {
+            "label": "EventImage2",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "eventname2": {
+          "type": "Text",
+          "config": {
+            "label": "EventName2",
+            "placeholder": ""
+          }
+        },
+        "projector": {
+          "type": "Text",
+          "config": {
+            "label": "Projector",
+            "placeholder": ""
+          }
+        },
+        "restroom": {
+          "type": "Text",
+          "config": {
+            "label": "Restroom",
+            "placeholder": ""
+          }
+        },
+        "functionroom": {
+          "type": "Text",
+          "config": {
+            "label": "FunctionRoom",
+            "placeholder": ""
+          }
+        },
+        "eventimage3": {
+          "type": "Image",
+          "config": {
+            "label": "EventImage3",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "eventname3": {
+          "type": "Text",
+          "config": {
+            "label": "EventName3",
+            "placeholder": ""
+          }
+        },
+        "security": {
+          "type": "Text",
+          "config": {
+            "label": "Security",
+            "placeholder": ""
+          }
+        },
+        "staffsupport": {
+          "type": "Text",
+          "config": {
+            "label": "StaffSupport",
+            "placeholder": ""
+          }
+        },
+        "parking": {
+          "type": "Text",
+          "config": {
+            "label": "Parking",
+            "placeholder": ""
+          }
+        },
+        "buttonlink": {
+          "type": "Link",
+          "config": {
+            "label": "ButtonLink",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "buttontext": {
+          "type": "Text",
+          "config": {
+            "label": "ButtonText",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
