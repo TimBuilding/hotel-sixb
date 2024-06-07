@@ -59,7 +59,7 @@ const EventInquiryForm = () => {
             render={({ field }) => (
               <FormItem className="flex flex-col">
                 <FormLabel className="text-black text-sm font-medium">
-                  Check In Date
+                  Event Starts
                 </FormLabel>
                 <Popover>
                   <PopoverTrigger asChild>
@@ -102,7 +102,7 @@ const EventInquiryForm = () => {
             render={({ field }) => (
               <FormItem className="flex flex-col">
                 <FormLabel className="text-black text-sm font-medium">
-                  Check Out Date
+                  Event Ends
                 </FormLabel>
                 <Popover>
                   <PopoverTrigger asChild>
@@ -144,9 +144,13 @@ const EventInquiryForm = () => {
             control={form.control}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Adults</FormLabel>
+                <FormLabel>Number of Guests</FormLabel>
                 <FormControl>
-                  <Input type="number" placeholder="Adults" {...field} />
+                  <Input
+                    type="number"
+                    placeholder="Number of Guests"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -157,14 +161,14 @@ const EventInquiryForm = () => {
             name="eventType"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Room Type</FormLabel>
+                <FormLabel>Event Type</FormLabel>
                 <Select
                   onValueChange={field.onChange}
                   defaultValue={field.value}
                 >
                   <FormControl>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select Room Type" />
+                      <SelectValue placeholder="Select Event Type" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>

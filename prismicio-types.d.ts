@@ -134,6 +134,71 @@ export type EventsandfunctionsDocument<Lang extends string = string> =
     Lang
   >;
 
+type EventsinquiryDocumentDataSlicesSlice = EventsInquirySlice;
+
+/**
+ * Content for EventsInquiry documents
+ */
+interface EventsinquiryDocumentData {
+  /**
+   * Slice Zone field in *EventsInquiry*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: eventsinquiry.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<EventsinquiryDocumentDataSlicesSlice> /**
+   * Meta Description field in *EventsInquiry*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: eventsinquiry.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *EventsInquiry*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: eventsinquiry.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *EventsInquiry*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: eventsinquiry.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * EventsInquiry document from Prismic
+ *
+ * - **API ID**: `eventsinquiry`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type EventsinquiryDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<EventsinquiryDocumentData>,
+    "eventsinquiry",
+    Lang
+  >;
+
 type HomePageDocumentDataSlicesSlice =
   | RoomsHomepageSlice
   | TestimonialsSlice
@@ -431,6 +496,7 @@ export type RoomsDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | AmenitiesDocument
   | EventsandfunctionsDocument
+  | EventsinquiryDocument
   | HomePageDocument
   | NavigationDocument
   | RoomDocument
@@ -2036,6 +2102,9 @@ declare module "@prismicio/client" {
       EventsandfunctionsDocument,
       EventsandfunctionsDocumentData,
       EventsandfunctionsDocumentDataSlicesSlice,
+      EventsinquiryDocument,
+      EventsinquiryDocumentData,
+      EventsinquiryDocumentDataSlicesSlice,
       HomePageDocument,
       HomePageDocumentData,
       HomePageDocumentDataSlicesSlice,
