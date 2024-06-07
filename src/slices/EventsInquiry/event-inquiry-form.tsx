@@ -49,7 +49,7 @@ const EventInquiryForm = () => {
   });
 
   return (
-    <div className="bg-[#EBE9E9] pt-8 px-4 block pb-5 rounded-2xl md:max-w-64 shadow-lg w-full mt-20">
+    <div className="bg-[#EBE9E9] pt-8 px-4 block pb-5 rounded-2xl md:max-w-64 shadow-lg w-full mt-20 z-10">
       <h2 className="font-bold mb-5">Event Inquiry</h2>
       <Form {...form}>
         <form className="flex flex-col gap-4">

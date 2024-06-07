@@ -22,13 +22,13 @@ const EventsInquiry = ({ slice }: EventsInquiryProps): JSX.Element => {
     >
       <PrismicNextImage
         field={slice.primary.coverphoto}
-        className="w-full h-64 object-cover md:h-[495px] absolute -z-10"
+        className="w-full h-64 object-cover md:h-[495px] absolute"
       />
       <div className="w-full max-w-5xl mx-auto flex flex-col md:flex-row-reverse pb-10 md:gap-10">
         <EventInquiryForm />
 
         <div className="flex flex-col mt-10 md:mt-96 md:flex-row md:justify-center md:gap-14 items-center justify-between w-full">
-          <div className="flex flex-col items-start justify-center gap-1">
+          <div className="flex flex-col items-start justify-center gap-1 w-80">
             <h2 className="text-2xl font-semibold">Get in Touch!</h2>
             <div className="flex flex-row items-center justify-start gap-4 mt-3">
               <Phone className="w-5 h-5" />
@@ -47,6 +47,7 @@ const EventsInquiry = ({ slice }: EventsInquiryProps): JSX.Element => {
             width="100%"
             height="270"
             id="gmap_canvas"
+            className="mt-10 md:mt-0"
             src="https://maps.google.com/maps?width=438&height=270&hl=en&q=6B%20Isaac%20Tolentino%20Ave,%20%20Brgy.%20San%20Jose%20Tagaytay%20City+(Tagaytay%20Hotel%20SixB)&t=&z=13&ie=UTF8&iwloc=B&output=embed"
           ></iframe>
           <Script

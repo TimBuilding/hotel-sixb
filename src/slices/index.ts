@@ -18,6 +18,7 @@ export const components = {
   room: dynamic(() => import("./RoomCard")),
   room_images: dynamic(() => import("./RoomImages")),
   room_information: dynamic(() => import("./RoomInformation")),
+  room_inquiry: dynamic(() => import("./RoomInquiry")),
   rooms_homepage: dynamic(() => import("./RoomsHomepage")),
   rooms_section: dynamic(() => import("./RoomsSection")),
   testimonials: dynamic(() => import("./Testimonials")),

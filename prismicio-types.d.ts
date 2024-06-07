@@ -463,6 +463,71 @@ export type RoomdetailsDocument<Lang extends string = string> =
     Lang
   >;
 
+type RoominquiryDocumentDataSlicesSlice = RoomInquirySlice;
+
+/**
+ * Content for RoomInquiry documents
+ */
+interface RoominquiryDocumentData {
+  /**
+   * Slice Zone field in *RoomInquiry*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: roominquiry.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<RoominquiryDocumentDataSlicesSlice> /**
+   * Meta Description field in *RoomInquiry*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: roominquiry.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *RoomInquiry*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: roominquiry.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *RoomInquiry*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: roominquiry.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * RoomInquiry document from Prismic
+ *
+ * - **API ID**: `roominquiry`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type RoominquiryDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<RoominquiryDocumentData>,
+    "roominquiry",
+    Lang
+  >;
+
 type RoomsDocumentDataSlicesSlice = RoomSlice;
 
 /**
@@ -501,6 +566,7 @@ export type AllDocumentTypes =
   | NavigationDocument
   | RoomDocument
   | RoomdetailsDocument
+  | RoominquiryDocument
   | RoomsDocument;
 
 /**
@@ -1787,6 +1853,81 @@ export type RoomInformationSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *RoomInquiry → Primary*
+ */
+export interface RoomInquirySliceDefaultPrimary {
+  /**
+   * CoverPhoto field in *RoomInquiry → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_inquiry.primary.coverphoto
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  coverphoto: prismic.ImageField<never>;
+
+  /**
+   * PhoneNumber field in *RoomInquiry → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_inquiry.primary.phonenumber
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  phonenumber: prismic.KeyTextField;
+
+  /**
+   * Email field in *RoomInquiry → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_inquiry.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * Location field in *RoomInquiry → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_inquiry.primary.location
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  location: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for RoomInquiry Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RoomInquirySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<RoomInquirySliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *RoomInquiry*
+ */
+type RoomInquirySliceVariation = RoomInquirySliceDefault;
+
+/**
+ * RoomInquiry Shared Slice
+ *
+ * - **API ID**: `room_inquiry`
+ * - **Description**: RoomInquiry
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RoomInquirySlice = prismic.SharedSlice<
+  "room_inquiry",
+  RoomInquirySliceVariation
+>;
+
+/**
  * Primary content in *RoomsHomepage → Primary*
  */
 export interface RoomsHomepageSliceDefaultPrimary {
@@ -2117,6 +2258,9 @@ declare module "@prismicio/client" {
       RoomdetailsDocument,
       RoomdetailsDocumentData,
       RoomdetailsDocumentDataSlicesSlice,
+      RoominquiryDocument,
+      RoominquiryDocumentData,
+      RoominquiryDocumentDataSlicesSlice,
       RoomsDocument,
       RoomsDocumentData,
       RoomsDocumentDataSlicesSlice,
@@ -2174,6 +2318,10 @@ declare module "@prismicio/client" {
       RoomInformationSliceDefaultPrimary,
       RoomInformationSliceVariation,
       RoomInformationSliceDefault,
+      RoomInquirySlice,
+      RoomInquirySliceDefaultPrimary,
+      RoomInquirySliceVariation,
+      RoomInquirySliceDefault,
       RoomsHomepageSlice,
       RoomsHomepageSliceDefaultPrimary,
       RoomsHomepageSliceRoomsHomepageRightPrimary,
