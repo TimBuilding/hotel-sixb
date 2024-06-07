@@ -197,6 +197,17 @@ type RoomdetailsDocumentDataSlicesSlice = RoomInformationSlice;
  */
 interface RoomdetailsDocumentData {
   /**
+   * Title field in *RoomDetails*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: roomdetails.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
    * Slice Zone field in *RoomDetails*
    *
    * - **Field Type**: Slice Zone
@@ -1403,6 +1414,16 @@ export interface RoomInformationSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   restaurants: prismic.RichTextField;
+
+  /**
+   * Images field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_information.primary.images[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  images: prismic.GroupField<Simplify<RoomInformationDocumentDataImagesItem>>;
 }
 
 /**
@@ -1801,6 +1822,7 @@ declare module "@prismicio/client" {
       RoomImagesSliceVariation,
       RoomImagesSliceDefault,
       RoomInformationSlice,
+      RoomInformationDocumentDataImagesItem,
       RoomInformationSliceDefaultPrimary,
       RoomInformationSliceVariation,
       RoomInformationSliceDefault,

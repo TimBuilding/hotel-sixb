@@ -127,6 +127,101 @@
 				"__TYPE__": "FieldContent",
 				"type": "Text",
 				"value": "Deluxe Lakeview Room"
+			},
+			"images": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"__TYPE__": "ImageContent",
+									"url": "https://images.unsplash.com/photo-1554995207-c18c203602cb?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMnx8cm9vbXxlbnwwfHx8fDE3MTc3MjIxNjJ8MA&ixlib=rb-4.0.3&q=85",
+									"alt": "living room",
+									"origin": {
+										"id": "L7EwHkq1B2s",
+										"url": "https://images.unsplash.com/photo-1554995207-c18c203602cb?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMnx8cm9vbXxlbnwwfHx8fDE3MTc3MjIxNjJ8MA&ixlib=rb-4.0.3&q=85",
+										"width": 4708,
+										"height": 3139
+									},
+									"width": 4708,
+									"height": 3139,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"thumbnails": {}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"__TYPE__": "ImageContent",
+									"url": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxOHx8cm9vbXxlbnwwfHx8fDE3MTc3MjIxNjJ8MA&ixlib=rb-4.0.3&q=85",
+									"alt": "photo of library with turned on lights",
+									"origin": {
+										"id": "sfL_QOnmy00",
+										"url": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxOHx8cm9vbXxlbnwwfHx8fDE3MTc3MjIxNjJ8MA&ixlib=rb-4.0.3&q=85",
+										"width": 5013,
+										"height": 4634
+									},
+									"width": 5013,
+									"height": 4634,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"thumbnails": {}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"__TYPE__": "ImageContent",
+									"url": "https://images.unsplash.com/photo-1589834390005-5d4fb9bf3d32?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw0fHxyb29tfGVufDB8fHx8MTcxNzcyMjE2Mnww&ixlib=rb-4.0.3&q=85",
+									"alt": "green plant on brown wooden table",
+									"origin": {
+										"id": "GHCVUtBECuY",
+										"url": "https://images.unsplash.com/photo-1589834390005-5d4fb9bf3d32?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw0fHxyb29tfGVufDB8fHx8MTcxNzcyMjE2Mnww&ixlib=rb-4.0.3&q=85",
+										"width": 4000,
+										"height": 6000
+									},
+									"width": 4000,
+									"height": 6000,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"thumbnails": {}
+								}
+							]
+						]
+					}
+				]
 			}
 		},
 		"items": []
