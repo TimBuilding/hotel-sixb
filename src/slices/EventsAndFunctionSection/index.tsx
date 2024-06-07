@@ -32,10 +32,10 @@ const EventsAndFunctionSection = ({
       data-slice-variation={slice.variation}
     >
       <div className="flex flex-col justify-between items-center py-9">
-        <h1 className="text-3xl font-bold text-[#947901] ">{slice.primary.title}</h1>
-        <h1 className="text-2xl font-semibold pt-4">{slice.primary.subtitle}</h1>
+        <h1 className="text-3xl font-bold text-[#947901]">{slice.primary.title}</h1>
+        <h1 className="text-2xl font-semibold pt-4 text-center">{slice.primary.subtitle}</h1>
         <div className="bg-white mx-20 my-10 p-16 flex flex-col gap-20">
-          <div className="flex flex-row gap-6">
+          <div className="flex flex-col lg:flex-row gap-6">
             <div className="flex flex-col">
               <PrismicNextImage field={slice.primary.eventimage1} className="w-72 h-72 object-cover rounded-t-2xl"/>
               <h2 className="text-white text-2xl font-semibold bg-[#947901] text-left p-4 w-72">{slice.primary.eventname1}</h2>
