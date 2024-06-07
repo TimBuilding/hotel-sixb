@@ -33,12 +33,12 @@ const RoomsSection = async ({
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 max-w-5xl w-full mx-auto gap-5 md:gap-16 px-6 pb-10 md:pb-16">
         {rooms.data.slices.map((room) => (
-          <div className="shadow-lg md:rounded-2xl rounded-3xl w-full md:max-w-lg max-w-40">
+          <div className="shadow-lg w-full md:max-w-lg rounded-2xl">
             <PrismicNextImage
               field={room.primary.image}
-              className="md:h-64 h-44 object-cover w-full"
+              className="md:h-64 h-44 object-cover w-full rounded-t-2xl"
             />
             <div className="bg-[#947901] md:p-4 p-2.5">
               <span className="text-white md:py-4 md:px-7 font-medium text-sm md:text-xl leading-7">
@@ -89,7 +89,7 @@ const RoomsSection = async ({
                 </span>
               </div>
             </div>
-            <div className="bg-white md:py-5 md:px-7 py-2.5 px-2 flex flex-row items-center justify-between">
+            <div className="bg-white md:py-5 md:px-7 py-2.5 px-2 flex flex-row items-center justify-between rounded-b-2xl">
               <span className="text-[#947901] md:text-2xl font-bold md:pl-0 pl-3">
                 ₱{room.primary.price}
               </span>

@@ -12,9 +12,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col items-center w-full justify-between min-h-screen">
-        <div className="h-full w-full">
+        <div className="h-full w-full ">
           <Navigation />
-          {children}
+          <main className="bg-[#F5F5F5]">{children}</main>
         </div>
         <Footer />
         <PrismicPreview repositoryName={repositoryName} />

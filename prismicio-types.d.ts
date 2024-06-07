@@ -129,34 +129,12 @@ export type NavigationDocument<Lang extends string = string> =
     Lang
   >;
 
-type RoomDocumentDataSlicesSlice = RoomsSectionSlice;
+type RoomDocumentDataSlicesSlice = PageTitleSlice | RoomsSectionSlice;
 
 /**
  * Content for Room documents
  */
 interface RoomDocumentData {
-  /**
-   * Title field in *Room*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: room.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
-   * Description field in *Room*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: room.description
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  description: prismic.KeyTextField;
-
   /**
    * Slice Zone field in *Room*
    *
@@ -631,6 +609,61 @@ export type NavigationItemSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *PageTitle → Primary*
+ */
+export interface PageTitleSliceDefaultPrimary {
+  /**
+   * Title field in *PageTitle → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_title.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *PageTitle → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page_title.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for PageTitle Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PageTitleSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PageTitleSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PageTitle*
+ */
+type PageTitleSliceVariation = PageTitleSliceDefault;
+
+/**
+ * PageTitle Shared Slice
+ *
+ * - **API ID**: `page_title`
+ * - **Description**: PageTitle
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PageTitleSlice = prismic.SharedSlice<
+  "page_title",
+  PageTitleSliceVariation
+>;
+
+/**
  * Primary content in *RichText → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -1050,6 +1083,10 @@ declare module "@prismicio/client" {
       NavigationItemSliceDefaultPrimary,
       NavigationItemSliceVariation,
       NavigationItemSliceDefault,
+      PageTitleSlice,
+      PageTitleSliceDefaultPrimary,
+      PageTitleSliceVariation,
+      PageTitleSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,

@@ -8,6 +8,7 @@ export const components = {
   events_and_function: dynamic(() => import("./EventsAndFunction")),
   hero: dynamic(() => import("./Hero")),
   navigation_item: dynamic(() => import("./NavigationItem")),
+  page_title: dynamic(() => import("./PageTitle")),
   rich_text: dynamic(() => import("./RichText")),
   rooms_homepage: dynamic(() => import("./RoomsHomepage")),
   testimonials: dynamic(() => import("./Testimonials")),

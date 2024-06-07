@@ -6,25 +6,14 @@
   "status": true,
   "json": {
     "Main": {
-      "title": {
-        "type": "Text",
-        "config": {
-          "label": "Title",
-          "placeholder": ""
-        }
-      },
-      "description": {
-        "type": "Text",
-        "config": {
-          "label": "Description",
-          "placeholder": ""
-        }
-      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "page_title": {
+              "type": "SharedSlice"
+            },
             "rooms_section": {
               "type": "SharedSlice"
             }
