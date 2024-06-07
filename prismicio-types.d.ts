@@ -129,7 +129,124 @@ export type NavigationDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomePageDocument | NavigationDocument;
+type RoomDocumentDataSlicesSlice = RoomsSectionSlice;
+
+/**
+ * Content for Room documents
+ */
+interface RoomDocumentData {
+  /**
+   * Title field in *Room*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *Room*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Slice Zone field in *Room*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<RoomDocumentDataSlicesSlice> /**
+   * Meta Description field in *Room*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: room.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Room*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Room*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: room.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Room document from Prismic
+ *
+ * - **API ID**: `room`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type RoomDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<RoomDocumentData>, "room", Lang>;
+
+type RoomsDocumentDataSlicesSlice = RoomSlice;
+
+/**
+ * Content for RoomsGrid documents
+ */
+interface RoomsDocumentData {
+  /**
+   * Slice Zone field in *RoomsGrid*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rooms.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<RoomsDocumentDataSlicesSlice>;
+}
+
+/**
+ * RoomsGrid document from Prismic
+ *
+ * - **API ID**: `rooms`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type RoomsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<RoomsDocumentData>, "rooms", Lang>;
+
+export type AllDocumentTypes =
+  | HomePageDocument
+  | NavigationDocument
+  | RoomDocument
+  | RoomsDocument;
 
 /**
  * Primary content in *Amenities → Primary*
@@ -786,6 +903,36 @@ export type RoomsHomepageSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Default variation for RoomsSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RoomsSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *RoomsSection*
+ */
+type RoomsSectionSliceVariation = RoomsSectionSliceDefault;
+
+/**
+ * RoomsSection Shared Slice
+ *
+ * - **API ID**: `rooms_section`
+ * - **Description**: RoomsSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RoomsSectionSlice = prismic.SharedSlice<
+  "rooms_section",
+  RoomsSectionSliceVariation
+>;
+
+/**
  * Primary content in *Testimonials → Primary*
  */
 export interface TestimonialsSliceDefaultPrimary {
@@ -876,6 +1023,12 @@ declare module "@prismicio/client" {
       NavigationDocument,
       NavigationDocumentData,
       NavigationDocumentDataSlicesSlice,
+      RoomDocument,
+      RoomDocumentData,
+      RoomDocumentDataSlicesSlice,
+      RoomsDocument,
+      RoomsDocumentData,
+      RoomsDocumentDataSlicesSlice,
       AllDocumentTypes,
       AmenitiesSlice,
       AmenitiesSliceDefaultPrimary,
@@ -911,6 +1064,9 @@ declare module "@prismicio/client" {
       RoomsHomepageSliceVariation,
       RoomsHomepageSliceDefault,
       RoomsHomepageSliceRoomsHomepageRight,
+      RoomsSectionSlice,
+      RoomsSectionSliceVariation,
+      RoomsSectionSliceDefault,
       TestimonialsSlice,
       TestimonialsSliceDefaultPrimary,
       TestimonialsSliceVariation,

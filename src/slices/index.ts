@@ -12,4 +12,5 @@ export const components = {
   rooms_homepage: dynamic(() => import("./RoomsHomepage")),
   testimonials: dynamic(() => import("./Testimonials")),
   room: dynamic(() => import("./RoomCard")),
+  rooms_section: dynamic(() => import("./RoomsSection")),
 };

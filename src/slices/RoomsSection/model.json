@@ -1,0 +1,18 @@
+{
+  "id": "rooms_section",
+  "type": "SharedSlice",
+  "name": "RoomsSection",
+  "description": "RoomsSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {}
+    }
+  ]
+}
