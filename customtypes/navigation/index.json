@@ -27,6 +27,21 @@
           "thumbnails": []
         }
       },
+      "rightbuttontext": {
+        "type": "Text",
+        "config": {
+          "label": "RightButtonText",
+          "placeholder": ""
+        }
+      },
+      "rightbuttonlink": {
+        "type": "Link",
+        "config": {
+          "label": "RightButtonLink",
+          "placeholder": "",
+          "select": null
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

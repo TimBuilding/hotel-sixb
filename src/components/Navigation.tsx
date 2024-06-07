@@ -1,16 +1,17 @@
-import { createClient } from '@/prismicio'
-import { PrismicNextImage, PrismicNextLink } from '@prismicio/next'
-import { Menu } from 'lucide-react'
-import { Button } from './ui/button'
-import { Sheet, SheetContent, SheetHeader, SheetTrigger } from './ui/sheet'
+import { createClient } from "@/prismicio";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { Menu } from "lucide-react";
+import { Button } from "./ui/button";
+import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "./ui/sheet";
 
-import FacebookIcon from '@/assets/icons/facebook-icon'
-import InstagramIcon from '@/assets/icons/instagram-icon'
-import { Separator } from './ui/separator'
+import FacebookIcon from "@/assets/icons/facebook-icon";
+import InstagramIcon from "@/assets/icons/instagram-icon";
+import { Separator } from "./ui/separator";
+import Link from "next/link";
 
 const Navigation = async () => {
-  const client = createClient()
-  const navigation = await client.getByUID('navigation', 'header-menu')
+  const client = createClient();
+  const navigation = await client.getByUID("navigation", "header-menu");
 
   return (
     <nav>
@@ -18,14 +19,14 @@ const Navigation = async () => {
         <Sheet>
           <SheetTrigger asChild={true}>
             <Button
-              variant={'ghost'}
-              size={'icon'}
+              variant={"ghost"}
+              size={"icon"}
               className="absolute left-6 md:hidden"
             >
               <Menu className="text-[#947901]" />
             </Button>
           </SheetTrigger>
-          <SheetContent side={'left'}>
+          <SheetContent side={"left"}>
             <SheetHeader className="mt-6 flex flex-row items-center justify-center">
               <PrismicNextImage
                 field={navigation.data.logo}
@@ -37,45 +38,59 @@ const Navigation = async () => {
               {/* Renders top-level links. */}
               {navigation.data.slices.map((slice) => {
                 return (
-                  <Button key={slice.id} variant={'ghost'} className="w-full">
+                  <Button key={slice.id} variant={"ghost"} className="w-full">
                     <PrismicNextLink field={slice.primary.link}>
                       <>{slice.primary.name}</>
                     </PrismicNextLink>
                   </Button>
-                )
+                );
               })}
             </div>
           </SheetContent>
         </Sheet>
         <div className="hidden flex-row items-center justify-center gap-2.5 md:flex">
-          <FacebookIcon />
-          <InstagramIcon />
+          <Link
+            href={"https://www.facebook.com/TagaytayHotelSixB"}
+            target="_blank"
+          >
+            <FacebookIcon />
+          </Link>
+          <Link
+            href={"https://www.instagram.com/tagaytayhotelsixb/"}
+            target="_blank"
+          >
+            <InstagramIcon />
+          </Link>
         </div>
         <div className="flex flex-row items-center justify-center">
-          <PrismicNextImage
-            field={navigation.data.logo}
-            width={182}
-            height={36}
-          />
+          <Link href="/">
+            <PrismicNextImage
+              field={navigation.data.logo}
+              width={182}
+              height={36}
+            />
+          </Link>
         </div>
         <Button className="py-2[9px] hidden rounded-full bg-[#947901] px-6 text-white md:flex">
-          Book Now
+          <PrismicNextLink field={navigation.data.rightbuttonlink}>
+            {navigation.data.rightbuttontext}
+          </PrismicNextLink>
         </Button>
       </div>
       <Separator className="hidden md:block" />
       <div className="hidden flex-row items-center justify-center gap-3 px-7 py-3 md:flex">
         {navigation.data.slices.map((slice) => {
           return (
-            <Button key={slice.id} variant={'ghost'} className="w-fit">
+            <Button key={slice.id} variant={"ghost"} className="w-fit">
               <PrismicNextLink field={slice.primary.link}>
                 <>{slice.primary.name}</>
               </PrismicNextLink>
             </Button>
-          )
+          );
         })}
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

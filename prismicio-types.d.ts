@@ -299,6 +299,28 @@ interface NavigationDocumentData {
   logo: prismic.ImageField<never>;
 
   /**
+   * RightButtonText field in *Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.rightbuttontext
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  rightbuttontext: prismic.KeyTextField;
+
+  /**
+   * RightButtonLink field in *Navigation*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.rightbuttonlink
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  rightbuttonlink: prismic.LinkField;
+
+  /**
    * Slice Zone field in *Navigation*
    *
    * - **Field Type**: Slice Zone

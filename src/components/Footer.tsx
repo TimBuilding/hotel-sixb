@@ -6,6 +6,7 @@ import FooterFacebookIcon from "@/assets/icons/footer-facebook-icon";
 import FooterInstagramIcon from "@/assets/icons/footer-instagram-icon";
 import Logo from "@/assets/images/logo.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -56,10 +57,20 @@ const Footer = () => {
           </div>
           <div className="flex flex-row items-center justify-center md:justify-start md:pl-5">
             <Button variant={"ghost"} size={"icon"}>
-              <FooterFacebookIcon className="text-white" />
+              <Link
+                href={"https://www.facebook.com/TagaytayHotelSixB"}
+                target="_blank"
+              >
+                <FooterFacebookIcon className="text-white" />
+              </Link>
             </Button>
             <Button variant={"ghost"} size={"icon"}>
-              <FooterInstagramIcon className="text-white" />
+              <Link
+                href={"https://www.instagram.com/tagaytayhotelsixb/"}
+                target="_blank"
+              >
+                <FooterInstagramIcon className="text-white" />
+              </Link>
             </Button>
           </div>
         </div>
