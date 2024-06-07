@@ -2,11 +2,11 @@
 import "@/app/globals.css";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
-import { repositoryName } from "@/prismicio";
+import { createClient, repositoryName } from "@/prismicio";
 import { PrismicPreview } from "@prismicio/next";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { PrismicProvider } from "@prismicio/react";
 
-const queryClient = new QueryClient();
+const client = createClient();
 
 export default function RootLayout({
   children,
@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <QueryClientProvider client={queryClient}>
+      <PrismicProvider client={client}>
         <body className="flex flex-col items-center w-full justify-between min-h-screen">
           <div className="h-full w-full ">
             <Navigation />
@@ -24,7 +24,7 @@ export default function RootLayout({
           <Footer />
           <PrismicPreview repositoryName={repositoryName} />
         </body>
-      </QueryClientProvider>
+      </PrismicProvider>
     </html>
   );
 }

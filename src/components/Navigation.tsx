@@ -14,7 +14,7 @@ const Navigation = async () => {
 
   return (
     <nav>
-      <div className="mt-6 flex-row items-center justify-between md:flex md:px-7 md:py-3">
+      <div className="py-6 flex-row items-center justify-between md:flex md:px-7 md:py-3">
         <Sheet>
           <SheetTrigger asChild={true}>
             <Button

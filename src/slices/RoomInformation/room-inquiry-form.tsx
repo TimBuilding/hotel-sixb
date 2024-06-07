@@ -26,9 +26,8 @@ import { Separator } from "@/components/ui/separator";
 import { Textarea } from "@/components/ui/textarea";
 import roomInquirySchema from "@/lib/room-inquiry-schema";
 import { cn } from "@/lib/utils";
-import getRooms from "@/queries/get-rooms";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useAllPrismicDocumentsByType } from "@prismicio/react";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -51,7 +50,7 @@ const RoomInquiryForm = () => {
     },
   });
 
-  const { data: rooms } = useQuery({ queryKey: ["rooms"], queryFn: getRooms });
+  const [rooms] = useAllPrismicDocumentsByType("roomdetails");
 
   return (
     <Form {...form}>
@@ -70,7 +69,7 @@ const RoomInquiryForm = () => {
                     <Button
                       variant={"outline"}
                       className={cn(
-                        "w-[240px] pl-3 text-left font-normal",
+                        "w-full pl-3 text-left font-normal",
                         !field.value && "text-muted-foreground"
                       )}
                     >
@@ -113,7 +112,7 @@ const RoomInquiryForm = () => {
                     <Button
                       variant={"outline"}
                       className={cn(
-                        "w-[240px] pl-3 text-left font-normal",
+                        "w-full pl-3 text-left font-normal",
                         !field.value && "text-muted-foreground"
                       )}
                     >
