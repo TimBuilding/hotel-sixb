@@ -235,7 +235,7 @@ const RoomInquiryForm = () => {
           )}
         />
         <FormField
-          name={"numberOfRooms"}
+          name={"email"}
           control={form.control}
           render={({ field }) => (
             <FormItem>
@@ -248,26 +248,13 @@ const RoomInquiryForm = () => {
           )}
         />
         <FormField
-          name={"numberOfRooms"}
+          name={"phone"}
           control={form.control}
           render={({ field }) => (
             <FormItem>
               <FormLabel>Mobile Number</FormLabel>
               <FormControl>
                 <Input type="text" placeholder="Mobile Number" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          name={"numberOfRooms"}
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input type="text" placeholder="Email" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

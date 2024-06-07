@@ -1,0 +1,48 @@
+{
+  "id": "events_inquiry",
+  "type": "SharedSlice",
+  "name": "EventsInquiry",
+  "description": "EventsInquiry",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "coverphoto": {
+          "type": "Image",
+          "config": {
+            "label": "CoverPhoto",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "phonenumber": {
+          "type": "Text",
+          "config": {
+            "label": "PhoneNumber",
+            "placeholder": ""
+          }
+        },
+        "email": {
+          "type": "Text",
+          "config": {
+            "label": "Email",
+            "placeholder": ""
+          }
+        },
+        "location": {
+          "type": "Text",
+          "config": {
+            "label": "Location",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

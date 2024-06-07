@@ -10,6 +10,7 @@ export const components = {
   events_and_function_section: dynamic(
     () => import("./EventsAndFunctionSection"),
   ),
+  events_inquiry: dynamic(() => import("./EventsInquiry")),
   hero: dynamic(() => import("./Hero")),
   navigation_item: dynamic(() => import("./NavigationItem")),
   page_title: dynamic(() => import("./PageTitle")),

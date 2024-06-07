@@ -1004,6 +1004,81 @@ export type EventsAndFunctionSectionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *EventsInquiry → Primary*
+ */
+export interface EventsInquirySliceDefaultPrimary {
+  /**
+   * CoverPhoto field in *EventsInquiry → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_inquiry.primary.coverphoto
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  coverphoto: prismic.ImageField<never>;
+
+  /**
+   * PhoneNumber field in *EventsInquiry → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_inquiry.primary.phonenumber
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  phonenumber: prismic.KeyTextField;
+
+  /**
+   * Email field in *EventsInquiry → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_inquiry.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * Location field in *EventsInquiry → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events_inquiry.primary.location
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  location: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for EventsInquiry Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EventsInquirySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<EventsInquirySliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *EventsInquiry*
+ */
+type EventsInquirySliceVariation = EventsInquirySliceDefault;
+
+/**
+ * EventsInquiry Shared Slice
+ *
+ * - **API ID**: `events_inquiry`
+ * - **Description**: EventsInquiry
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EventsInquirySlice = prismic.SharedSlice<
+  "events_inquiry",
+  EventsInquirySliceVariation
+>;
+
+/**
  * Primary content in *Hero → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -1998,6 +2073,10 @@ declare module "@prismicio/client" {
       EventsAndFunctionSectionSliceDefaultPrimary,
       EventsAndFunctionSectionSliceVariation,
       EventsAndFunctionSectionSliceDefault,
+      EventsInquirySlice,
+      EventsInquirySliceDefaultPrimary,
+      EventsInquirySliceVariation,
+      EventsInquirySliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
