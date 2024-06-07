@@ -18,6 +18,7 @@ const routes: prismic.ClientConfig["routes"] = [
   { type: "amenities", path: "/amenities" },
   { type: "eventsinquiry", path: "/events-inquiry" },
   { type: "roominquiry", path: "/room-inquiry" },
+  { type: "dining", path: "/dining" },
   { type: "roomdetails", path: "/room/:uid" },
 ];
 

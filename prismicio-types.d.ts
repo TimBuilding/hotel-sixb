@@ -69,6 +69,71 @@ export type AmenitiesDocument<Lang extends string = string> =
     Lang
   >;
 
+type DiningDocumentDataSlicesSlice = PageTitleSlice | DiningSlice;
+
+/**
+ * Content for Dining documents
+ */
+interface DiningDocumentData {
+  /**
+   * Slice Zone field in *Dining*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<DiningDocumentDataSlicesSlice> /**
+   * Meta Description field in *Dining*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: dining.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Dining*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dining.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Dining*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: dining.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Dining document from Prismic
+ *
+ * - **API ID**: `dining`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type DiningDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<DiningDocumentData>,
+    "dining",
+    Lang
+  >;
+
 type EventsandfunctionsDocumentDataSlicesSlice = EventsAndFunctionSectionSlice;
 
 /**
@@ -582,6 +647,7 @@ export type RoomsDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | AmenitiesDocument
+  | DiningDocument
   | EventsandfunctionsDocument
   | EventsinquiryDocument
   | HomePageDocument
@@ -2510,6 +2576,9 @@ declare module "@prismicio/client" {
       AmenitiesDocument,
       AmenitiesDocumentData,
       AmenitiesDocumentDataSlicesSlice,
+      DiningDocument,
+      DiningDocumentData,
+      DiningDocumentDataSlicesSlice,
       EventsandfunctionsDocument,
       EventsandfunctionsDocumentData,
       EventsandfunctionsDocumentDataSlicesSlice,
