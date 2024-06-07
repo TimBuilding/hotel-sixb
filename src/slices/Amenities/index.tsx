@@ -22,7 +22,7 @@ const Amenities = ({ slice }: AmenitiesProps): JSX.Element => {
           {slice.primary.description}
         </h3>
 
-        <div className="flex flex-col gap-3 mt-6 md:mt-8 md:flex-row md:gap-5">
+        <div className="flex flex-col gap-3 mt-6 md:mt-8 md:flex-row md:gap-5 items-center justify-center overflow-hidden">
           <PrismicNextImage
             field={slice.primary.image1}
             className="shadow-2xl w-full h-48 md:w-80 md:h-72 object-cover"
