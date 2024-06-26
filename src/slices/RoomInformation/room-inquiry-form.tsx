@@ -30,8 +30,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useAllPrismicDocumentsByType } from "@prismicio/react";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
+import { TablesInsert } from "../../../types/database.types";
+import { createBrowserClient } from "../../../utils/supabase";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
+import { useState } from "react";
+import { createClient } from "@supabase/supabase-js";
 
 const RoomInquiryForm = () => {
   const form = useForm<z.infer<typeof roomInquirySchema>>({
@@ -52,9 +57,57 @@ const RoomInquiryForm = () => {
 
   const [rooms] = useAllPrismicDocumentsByType("roomdetails");
 
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const submitHandler: SubmitHandler<
+    z.infer<typeof roomInquirySchema>
+  > = async (data) => {
+    setIsLoading(true);
+
+    if (!captchaToken) {
+      setError("Please verify the captcha");
+      setIsLoading(false);
+      return;
+    }
+
+    setError(null);
+
+    try {
+      const response = await fetch("/api/submit-room-inquiry", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...data,
+          hcaptchaToken: captchaToken,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        setError(result.error || "An error occurred while submitting the form");
+      } else {
+        // Handle successful submission (e.g., show a success message, reset form, etc.)
+        form.reset();
+        alert("Room inquiry submitted successfully");
+      }
+    } catch (error) {
+      setError("An error occurred while submitting the form");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <Form {...form}>
-      <form className="flex flex-col gap-4">
+      <form
+        onSubmit={form.handleSubmit(submitHandler)}
+        className="flex flex-col gap-4"
+      >
         <FormField
           control={form.control}
           name="checkInDate"
@@ -273,11 +326,17 @@ const RoomInquiryForm = () => {
             </FormItem>
           )}
         />
+        <HCaptcha
+          sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY!}
+          onVerify={(token) => setCaptchaToken(token)}
+        />
+        {error && <p className="text-red-500 text-sm">{error}</p>}
         <Button
           type="submit"
           className="rounded-full bg-[#947901] text-white px-4 py-1"
+          disabled={!captchaToken || isLoading}
         >
-          Inquire Now
+          {isLoading ? "Loading..." : "Inquire Now"}
         </Button>
       </form>
     </Form>

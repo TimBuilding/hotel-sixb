@@ -24,7 +24,7 @@ const RoomInquiry = ({ slice }: RoomInquiryProps): JSX.Element => {
         className="w-full h-64 object-cover md:h-[495px] absolute"
       />
       <div className="w-full max-w-5xl mx-auto flex flex-col md:flex-row-reverse pb-10 md:gap-10">
-        <div className="bg-[#EBE9E9] pt-8 px-4 block pb-5 rounded-2xl md:max-w-64 shadow-lg w-full mt-20 z-10">
+        <div className="bg-[#EBE9E9] pt-8 px-4 block pb-5 rounded-2xl md:max-w-fit shadow-lg w-full mt-20 z-10">
           <h2 className="font-bold mb-5">Room Inquiry</h2>
           <RoomInquiryForm />
         </div>

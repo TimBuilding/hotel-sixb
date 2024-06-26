@@ -11,9 +11,11 @@
     "start": "next start",
     "lint": "next lint",
     "slicemachine": "start-slicemachine",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "typegen": "supabase gen types typescript --local > types/database.types.ts"
   },
   "dependencies": {
+    "@hcaptcha/react-hcaptcha": "^1.10.1",
     "@hookform/resolvers": "^3.6.0",
     "@prismicio/client": "^7.5.0",
     "@prismicio/next": "^1.6.0",
@@ -25,6 +27,8 @@
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tabs": "^1.0.4",
+    "@supabase/ssr": "^0.4.0",
+    "@supabase/supabase-js": "^2.44.0",
     "@tanstack/react-query": "^5.40.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
