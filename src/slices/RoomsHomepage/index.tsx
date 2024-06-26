@@ -22,9 +22,10 @@ const RoomsHomepage = ({slice}: RoomsHomepageProps): JSX.Element => {
             <div className="md:hidden">
                 <div
                     className={cn(slice.variation === 'default' ? 'flex-row' : 'flex-row-reverse ', "flex gap-10 bg-zinc-100")}>
-                    <div className={cn(slice.variation === 'default' ? 'p-8' : 'px-3 py-8', "flex flex-col gap-5 w-1/2")}>
-                        <h1 className="font-semibold text-sm">{slice.primary.title}</h1>
-                        <h1 className="font-bold text-base ">{slice.primary.description}</h1>
+                    <div
+                        className={cn(slice.variation === 'default' ? 'p-8' : 'px-3 py-8', "flex flex-col gap-5 w-1/2")}>
+                        <h2 className="font-semibold text-sm">{slice.primary.title}</h2>
+                        <h3 className="font-bold text-base ">{slice.primary.description}</h3>
                         <Button className="rounded-3xl bg-[#947901] py-1 px-4">
                             <PrismicNextLink field={slice.primary.buttonlink}>
                                 <h2 className="text-base ">{slice.primary.buttontext}</h2>
@@ -38,11 +39,11 @@ const RoomsHomepage = ({slice}: RoomsHomepageProps): JSX.Element => {
                 <div
                     className={cn(slice.variation === 'default' ? 'flex-row' : 'flex-row-reverse', "flex bg-zinc-100 items-center justify-between")}>
                     <div className={cn(slice.variation === 'default' ? 'px-16' : 'px-8', "flex flex-col gap-6 w-1/2")}>
-                        <h1 className="font-semibold text-2xl">{slice.primary.title}</h1>
-                        <h1 className="font-bold text-3xl text-pretty ">{slice.primary.description}</h1>
+                        <h2 className="font-semibold">{slice.primary.title}</h2>
+                        <h3 className="font-bold text-lg text-pretty ">{slice.primary.description}</h3>
                         <Button className="rounded-3xl bg-[#947901] w-44">
                             <PrismicNextLink field={slice.primary.buttonlink}>
-                                <h2 className="text-xl">{slice.primary.buttontext}</h2>
+                                {slice.primary.buttontext}
                             </PrismicNextLink>
                         </Button>
                     </div>
