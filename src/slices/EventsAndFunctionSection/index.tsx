@@ -40,15 +40,15 @@ const EventsAndFunctionSection = ({
               <PrismicNextImage field={slice.primary.eventimage1} className="w-72 h-72 object-cover rounded-t-2xl"/>
               <h2 className="text-white text-2xl font-semibold bg-[#947901] text-left p-4 w-72">{slice.primary.eventname1}</h2>
               <div className="pt-8">
-                <div className="flex flex-row text-gray-600 items-center gap-2">
+                <div className="flex flex-row text-gray-600 items-start gap-2">
                   <UserRound className="w-5 h-6"/>
                   <h2 className="font-semibold text-lg">{slice.primary.numberofguests}</h2>
                 </div>
-                <div className="flex flex-row text-gray-600 items-center gap-2">
+                <div className="flex flex-row text-gray-600 items-start gap-2">
                   <Utensils className="w-5 h-6"/>
                   <h2 className="font-semibold text-lg">{slice.primary.cateringoptions}</h2>
                 </div>
-                <div className="flex flex-row text-gray-600 items-center gap-2">
+                <div className="flex flex-row text-gray-600 items-start gap-2">
                   <Wifi className="w-5 h-6"/>
                   <h2 className="font-semibold text-lg">{slice.primary.wifi}</h2>
                 </div>
@@ -58,16 +58,16 @@ const EventsAndFunctionSection = ({
               <PrismicNextImage field={slice.primary.eventimage2} className="w-72 h-72 object-cover rounded-t-2xl"/>
               <h2 className="text-white text-2xl font-semibold bg-[#947901] text-left p-4 w-72">{slice.primary.eventname2}</h2>
               <div className="pt-8">
-                <div className="flex flex-row text-gray-600 items-center gap-2">
+                <div className="flex flex-row text-gray-600 items-start gap-2">
                   <Projector className="w-5 h-6"/>
                   <h2 className="font-semibold text-lg">{slice.primary.projector}</h2>
                 </div>
-                <div className="flex flex-row text-gray-600 items-center gap-2 w-72">
+                <div className="flex flex-row text-gray-600 items-start gap-2 w-72">
                   <CircleCheckBig className="w-5 h-6"/>
                   <h2 className="font-semibold text-lg">{slice.primary.restroom}</h2>
                 </div>
-                <div className="flex flex-row text-gray-600 items-center gap-2 w-72">
-                  <DoorOpen className="w-5 h-6"/>
+                <div className="flex flex-row text-gray-600 items-start gap-2 w-72">
+                  <DoorOpen className="w-7 h-7"/>
                   <h2 className="font-semibold text-lg">{slice.primary.functionroom}</h2>
                 </div>
               </div>
@@ -76,15 +76,15 @@ const EventsAndFunctionSection = ({
               <PrismicNextImage field={slice.primary.eventimage3} className="w-72 h-72 object-cover rounded-t-2xl"/>
               <h2 className="text-white text-2xl font-semibold bg-[#947901] text-left p-4 w-72">{slice.primary.eventname3}</h2>
               <div className="pt-8">
-                <div className="flex flex-row text-gray-600 items-center gap-2">
+                <div className="flex flex-row text-gray-600 items-start gap-2">
                   <ShieldCheck className="w-5 h-6"/>
                   <h2 className="font-semibold text-lg">{slice.primary.security}</h2>
                 </div>
-                <div className="flex flex-row text-gray-600 items-center gap-2">
+                <div className="flex flex-row text-gray-600 items-start gap-2">
                   <Headset className="w-5 h-6"/>
                   <h2 className="font-semibold text-lg">{slice.primary.staffsupport}</h2>
                 </div>
-                <div className="flex flex-row text-gray-600 items-center gap-2">
+                <div className="flex flex-row text-gray-600 items-start gap-2">
                   <SquareParking className="w-5 h-6"/>
                   <h2 className="font-semibold text-lg">{slice.primary.parking}</h2>
                 </div>
