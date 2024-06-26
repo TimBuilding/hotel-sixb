@@ -1,3 +1,4 @@
+
 import { createClient } from "@/prismicio";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { Menu } from "lucide-react";
@@ -48,7 +49,7 @@ const Navigation = async () => {
             </div>
           </SheetContent>
         </Sheet>
-        <div className="hidden flex-row items-center justify-center gap-2.5 md:flex">
+        <div className="hidden flex-row items-center justify-center gap-2.5 md:flex md:invisible">
           <Link
             href={"https://www.facebook.com/TagaytayHotelSixB"}
             target="_blank"
