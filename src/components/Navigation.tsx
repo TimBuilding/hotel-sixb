@@ -78,7 +78,7 @@ const Navigation = async () => {
           </PrismicNextLink>
         </Button>
       </div>
-      <Separator className="hidden md:block" />
+      <Separator className="hidden md:block bg-[#947901]" />
       <div className="hidden flex-row items-center justify-center gap-3 px-7 py-3 md:flex">
         {navigation.data.slices.map((slice) => {
           return (
