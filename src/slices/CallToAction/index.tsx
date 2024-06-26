@@ -28,7 +28,7 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
           }}
         >
           <div
-            className="absolute inset-0 -z-10 rounded-3xl"
+            className="absolute inset-0 z-10 rounded-3xl"
             style={{
               backgroundImage: `url(${slice.primary.backgroundimage.url})`,
               backgroundSize: 'cover',
@@ -38,13 +38,13 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
             }}
           />
           <div className="mb-4 flex flex-col items-center justify-start md:mb-12 md:justify-center">
-            <h2 className="text-center text-lg font-semibold md:text-3xl">
+            <h2 className="text-center text-lg font-bold md:text-3xl">
               {slice.primary.title}
             </h2>
           </div>
           <PrismicRichText field={slice.primary.content} />
           <div className="flex flex-col items-center justify-center">
-            <Button className="mt-4 rounded-full bg-[#947901] px-4 py-1 text-base font-medium text-white md:mt-10">
+            <Button className="mt-4 rounded-full bg-[#947901] px-4 py-1 text-base font-medium text-white md:mt-10 z-20">
               <PrismicNextLink field={slice.primary.buttonurl}>
                 {slice.primary.buttontext}
               </PrismicNextLink>
