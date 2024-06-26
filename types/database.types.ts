@@ -34,6 +34,45 @@ export type Database = {
   }
   public: {
     Tables: {
+      event_inquiries: {
+        Row: {
+          created_at: string | null
+          email: string
+          event_end: string
+          event_start: string
+          event_type: string
+          id: string
+          message: string
+          name: string
+          number_of_guest: number
+          phone: string
+        }
+        Insert: {
+          created_at?: string | null
+          email: string
+          event_end: string
+          event_start: string
+          event_type: string
+          id?: string
+          message: string
+          name: string
+          number_of_guest: number
+          phone: string
+        }
+        Update: {
+          created_at?: string | null
+          email?: string
+          event_end?: string
+          event_start?: string
+          event_type?: string
+          id?: string
+          message?: string
+          name?: string
+          number_of_guest?: number
+          phone?: string
+        }
+        Relationships: []
+      }
       room_inquiries: {
         Row: {
           adults: number
@@ -81,12 +120,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      hcaptcha_verified: {
-        Args: {
-          captchatoken: string
-        }
-        Returns: boolean
-      }
+      [_ in never]: never
     }
     Enums: {
       [_ in never]: never

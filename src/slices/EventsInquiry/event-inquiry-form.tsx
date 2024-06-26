@@ -30,8 +30,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
+
+import { useState } from "react";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 const EventInquiryForm = () => {
   const form = useForm<z.infer<typeof eventInquirySchema>>({
@@ -48,11 +51,59 @@ const EventInquiryForm = () => {
     },
   });
 
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const submitHandler: SubmitHandler<
+    z.infer<typeof eventInquirySchema>
+  > = async (data) => {
+    setIsLoading(true);
+
+    if (!captchaToken) {
+      setError("Please verify the captcha");
+      setIsLoading(false);
+      return;
+    }
+
+    setError(null);
+
+    try {
+      const response = await fetch("/api/submit-event-inquiry", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...data,
+          hcaptchaToken: captchaToken,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        setError(result.error || "An error occurred while submitting the form");
+      } else {
+        // Handle successful submission (e.g., show a success message, reset form, etc.)
+        form.reset();
+        alert("Event inquiry submitted successfully");
+      }
+    } catch (error) {
+      setError("An error occurred while submitting the form");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
-    <div className="bg-[#EBE9E9] pt-8 px-4 block pb-5 rounded-2xl md:max-w-64 shadow-lg w-full mt-20 z-10">
+    <div className="bg-[#EBE9E9] pt-8 px-4 block pb-5 rounded-2xl md:max-w-fit shadow-lg w-full mt-20 z-10">
       <h2 className="font-bold mb-5">Event Inquiry</h2>
       <Form {...form}>
-        <form className="flex flex-col gap-4">
+        <form
+          onSubmit={form.handleSubmit(submitHandler)}
+          className="flex flex-col gap-4"
+        >
           <FormField
             control={form.control}
             name="eventStart"
@@ -238,11 +289,17 @@ const EventInquiryForm = () => {
               </FormItem>
             )}
           />
+          <HCaptcha
+            sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY!}
+            onVerify={(token) => setCaptchaToken(token)}
+          />
+          {error && <p className="text-red-500 text-sm">{error}</p>}
           <Button
             type="submit"
             className="rounded-full bg-[#947901] text-white px-4 py-1"
+            disabled={!captchaToken || isLoading}
           >
-            Inquire Now
+            {isLoading ? "Loading..." : "Inquire Now"}
           </Button>
         </form>
       </Form>
