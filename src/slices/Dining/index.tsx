@@ -19,7 +19,7 @@ const Dining = ({ slice }: DiningProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="lg:hidden py-9">
+      <div className="lg:hidden pb-9">
         <Tabs
           defaultValue="diningtab1"
           className="mx-auto bg-white p-10 flex flex-col"
@@ -163,7 +163,7 @@ const Dining = ({ slice }: DiningProps): JSX.Element => {
           {/*</TabsContent>*/}
         </Tabs>
       </div>
-      <div className="py-9 hidden lg:block mx-auto ">
+      <div className="pb-9 -mt-16 hidden lg:block mx-auto ">
         <Tabs
           defaultValue="diningtab1"
           className="bg-white px-20 py-16 my-16 mx-auto xl:mx-20"
