@@ -3,6 +3,7 @@ import { z } from "zod";
 import { TablesInsert } from "../../../../types/database.types";
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { EmailParams, MailerSend, Recipient, Sender } from "mailersend";
 
 export const POST = async (req: Request) => {
   const { hcaptchaToken, ...data } = (await req.json()) as z.infer<
@@ -57,6 +58,36 @@ export const POST = async (req: Request) => {
       { status: 500 }
     );
   }
+
+  // send email notification to admin
+  const mailersend = new MailerSend({
+    apiKey: process.env.MAILERSEND_API_TOKEN || "",
+  });
+
+  const sender = new Sender(
+    process.env.MAILERSEND_SENDER_EMAIL_ADDRESS || "",
+    "Hotel SixB"
+  );
+  const recipient = new Recipient(
+    process.env.MAILERSEND_RECIPIENT_EMAIL_ADDRESS || ""
+  );
+
+  const emailParams = new EmailParams()
+    .setFrom(sender)
+    .setTo([recipient])
+    .setSubject("New room inquiry").setText(`New room inquiry details:
+      Name: ${data.name}
+      Email: ${data.email}
+      Phone: ${data.phone}
+      Check-in Date: ${data.checkInDate}
+      Check-out Date: ${data.checkOutDate}
+      Adults: ${data.adults}
+      Children: ${data.children}
+      Room Type: ${data.roomType}
+      Number of Rooms: ${data.numberOfRooms}
+      Message: ${data.message}`);
+
+  await mailersend.email.send(emailParams);
 
   return NextResponse.json(
     { message: "Room inquiry submitted successfully" },

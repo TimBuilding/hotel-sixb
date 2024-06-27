@@ -4,6 +4,7 @@ import eventInquirySchema from "@/lib/event-inquiry-schema";
 import { createClient } from "@supabase/supabase-js";
 
 import { NextRequest, NextResponse } from "next/server";
+import { EmailParams, MailerSend, Recipient, Sender } from "mailersend";
 
 export const POST = async (req: NextRequest) => {
   if (req.method !== "POST") {
@@ -57,6 +58,31 @@ export const POST = async (req: NextRequest) => {
     if (error) {
       throw error;
     }
+
+    // send email notification to admin
+    const mailersend = new MailerSend({
+      apiKey: process.env.MAILERSEND_API_TOKEN || "",
+    });
+
+    const sender = new Sender(process.env.MAILERSEND_SENDER_EMAIL_ADDRESS || "", 'Hotel SixB');
+    const recipient = new Recipient(
+      process.env.MAILERSEND_RECIPIENT_EMAIL_ADDRESS || ""
+    );
+
+    const emailParams = new EmailParams()
+      .setFrom(sender)
+      .setTo([recipient])
+      .setSubject("New event inquiry").setText(`New event inquiry details:
+        Name: ${data.name}
+        Email: ${data.email}
+        Phone: ${data.phone}
+        Event Start: ${data.eventStart}
+        Event End: ${data.eventEnd}
+        Number of Guests: ${data.numberOfGuest}
+        Event Type: ${data.eventType}
+        Message: ${data.message}`);
+
+    await mailersend.email.send(emailParams);
 
     return NextResponse.json(
       { message: "Event inquiry submitted successfully", data },
