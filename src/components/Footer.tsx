@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import {ArrowRight, Facebook, Instagram, Mail, MapPin, Phone} from "lucide-react";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import FacebookIcon from "@/assets/icons/facebook-icon";
@@ -55,21 +55,21 @@ const Footer = () => {
               <ArrowRight className="w-6 h-6" />
             </Button>
           </div>
-          <div className="flex flex-row items-center justify-center md:justify-start md:pl-5">
-            <Button variant={"ghost"} size={"icon"}>
+          <div className="flex flex-row items-center justify-center md:justify-start md:pl-5 gap-2 pb-4">
+            <Button  variant={"ghost"} className="group hover:bg-white hover:scale-105 bg-white rounded-full h-8 w-8">
               <Link
                 href={"https://www.facebook.com/TagaytayHotelSixB"}
                 target="_blank"
               >
-                <FooterFacebookIcon className="text-white" />
+                <Facebook className="text-[#947901] group-hover:scale-105 h-5 w-5" absoluteStrokeWidth={true}/>
               </Link>
             </Button>
-            <Button variant={"ghost"} size={"icon"}>
+            <Button variant={"ghost"} className="group hover:bg-white hover:scale-105 bg-white h-8 w-8">
               <Link
                 href={"https://www.instagram.com/tagaytayhotelsixb/"}
                 target="_blank"
               >
-                <FooterInstagramIcon className="text-white" />
+                <Instagram className="text-[#947901] group-hover:scale-105 h-5 w-5"/>
               </Link>
             </Button>
           </div>
