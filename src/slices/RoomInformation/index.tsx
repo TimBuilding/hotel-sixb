@@ -35,7 +35,7 @@ const RoomInformation = ({ slice }: RoomInformationProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="flex flex-col md:flex-row gap-5 w-full max-w-5xl mx-auto py-14 px-4 items-start">
+      <div className="flex flex-col md:flex-row gap-5 w-full max-w-5xl mx-auto py-14 px-2 items-start">
         <div className="flex flex-col gap-5 w-full items-center justify-center">
           {/* Images */}
           <div className="flex flex-row h-96 gap-4">
@@ -56,12 +56,12 @@ const RoomInformation = ({ slice }: RoomInformationProps): JSX.Element => {
           </div>
 
           {/* Information */}
-          <div className="flex flex-col gap-5 px-5 md:px-10">
+          <div className="flex flex-col gap-5 px-5 lg:-ml-40">
             <h1 className="text-[#947901] text-xl font-bold">
               {slice.primary.title}
             </h1>
             <h2 className="text-[#947901] text-lg font-medium">
-              {slice.primary.price}
+              ₱ {slice.primary.price}
             </h2>
             <div className="pt-8 pb-4 flex-col gap-5 justify-between flex md:flex-row">
               <div className="flex flex-col gap-1.5 items-start">
@@ -200,7 +200,7 @@ const RoomInformation = ({ slice }: RoomInformationProps): JSX.Element => {
                 Access to our in-house restaurants:
               </h2>
               <div className="text-base font-base text-[#5F6368] pl-6">
-                <PrismicRichText field={slice.primary.restaurants} />
+                <PrismicRichText field={slice.primary.restaurants}/>
               </div>
             </div>
           </div>
