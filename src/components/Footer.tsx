@@ -1,9 +1,6 @@
 import {ArrowRight, Facebook, Instagram, Mail, MapPin, Phone} from "lucide-react";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import FacebookIcon from "@/assets/icons/facebook-icon";
-import FooterFacebookIcon from "@/assets/icons/footer-facebook-icon";
-import FooterInstagramIcon from "@/assets/icons/footer-instagram-icon";
 import Logo from "@/assets/images/logo.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -41,13 +38,13 @@ const Footer = () => {
             <h4 className="text-white font-bold text-sm text-center md:text-2xl md:font-bold md:text-left">
               Subscribe
             </h4>
-            <p className="text-white text-xs w-64 md:w-56 md:mt-5">
+            <p className="text-white text-[15px] w-64 md:w-56 md:mt-5">
               Stay updated with our latest news and offers by subscribing to our
               Newsletter.
             </p>
           </div>
           <div className="relative">
-            <Input className="rounded-full w-64" placeholder="Email" />
+            <Input className="shadow rounded-full w-64 shadow-zinc-400 shadow-inner md:-ml-1 placeholder:italic placeholder:text-zinc-300" placeholder="Email" />
             <Button
               className="rounded-full bg-[#6F5300] text-white absolute right-0 top-0"
               size={"icon"}
@@ -55,28 +52,28 @@ const Footer = () => {
               <ArrowRight className="w-6 h-6" />
             </Button>
           </div>
-          <div className="flex flex-row items-center justify-center md:justify-start md:pl-5 gap-2 pb-4">
-            <Button  variant={"ghost"} className="group hover:bg-white hover:scale-105 bg-white rounded-full h-8 w-8">
+          <div className="flex flex-row items-center justify-center md:justify-start md:pl-5 gap-6 pb-4 md:-ml-4">
+            <Button  variant={"ghost"} className="group hover:bg-white hover:scale-105 hover:-translate-y-1 transition ease-in-out duration-300 bg-white rounded-full h-9 w-9">
               <Link
                 href={"https://www.facebook.com/TagaytayHotelSixB"}
                 target="_blank"
               >
-                <Facebook className="text-[#947901] group-hover:scale-105 h-5 w-5" absoluteStrokeWidth={true}/>
+                <Facebook className="text-[#947901] group-hover:scale-105 h-5 w-5 transition ease-in-out duration-300 "/>
               </Link>
             </Button>
-            <Button variant={"ghost"} className="group hover:bg-white hover:scale-105 bg-white h-8 w-8">
+            <Button variant={"ghost"} className="group hover:bg-white hover:scale-105 hover:-translate-y-1 transition ease-in-out duration-300 bg-white h-9 w-9">
               <Link
                 href={"https://www.instagram.com/tagaytayhotelsixb/"}
                 target="_blank"
               >
-                <Instagram className="text-[#947901] group-hover:scale-105 h-5 w-5"/>
+                <Instagram className="text-[#947901] group-hover:scale-105 transition ease-in-out duration-300 h-5 w-5"/>
               </Link>
             </Button>
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center h-full">
-          <Image src={Logo} alt="Tagaytay Hotel SixB" width={191} height={38} />
+        <div className="flex flex-col items-center justify-center my-auto h-full">
+          <Image src={Logo} alt="Tagaytay Hotel SixB" width={191} height={38} className="brightness-200" />
         </div>
       </div>
       <div className="bg-[#774E17] w-full flex flex-row items-center justify-center py-2.5 md:justify-start">
