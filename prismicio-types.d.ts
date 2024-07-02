@@ -2078,6 +2078,16 @@ export interface RoomInformationSliceDefaultPrimary {
   freeparking: prismic.KeyTextField;
 
   /**
+   * Coffee field in *RoomInformation → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: room_information.primary.coffee
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  coffee: prismic.KeyTextField;
+
+  /**
    * OutdoorInfinityPool field in *RoomInformation → Primary*
    *
    * - **Field Type**: Text
@@ -2116,16 +2126,6 @@ export interface RoomInformationSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   water: prismic.KeyTextField;
-
-  /**
-   * Coffee field in *RoomInformation → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: room_information.primary.coffee
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  coffee: prismic.KeyTextField;
 
   /**
    * Kettle field in *RoomInformation → Primary*
