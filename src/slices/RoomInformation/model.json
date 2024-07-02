@@ -118,6 +118,13 @@
             "placeholder": ""
           }
         },
+        "coffee": {
+          "type": "Text",
+          "config": {
+            "label": "Coffee",
+            "placeholder": ""
+          }
+        },
         "outdoorinfinitypool": {
           "type": "Text",
           "config": {
@@ -143,13 +150,6 @@
           "type": "Text",
           "config": {
             "label": "Water",
-            "placeholder": ""
-          }
-        },
-        "coffee": {
-          "type": "Text",
-          "config": {
-            "label": "Coffee",
             "placeholder": ""
           }
         },
