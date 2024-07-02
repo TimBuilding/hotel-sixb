@@ -9,7 +9,7 @@ import {
   DoorClosed,
   EggFried,
   GlassWater,
-  Heater,
+  Heater, PawPrint,
   Refrigerator,
   ShowerHead,
   SquareParking,
@@ -93,34 +93,40 @@ const RoomInformation = ({ slice }: RoomInformationProps): JSX.Element => {
 
               <div className="flex flex-col gap-1.5 items-start">
                 {slice.primary.breakfast && (
-                  <div className="flex flex-row gap-2.5 items-center justify-center">
-                    <EggFried className="w-4 h-4 text-[#5F6368]" />
-                    <span className="text-base font-base text-[#5F6368]">
+                    <div className="flex flex-row gap-2.5 items-center justify-center">
+                      <EggFried className="w-4 h-4 text-[#5F6368]"/>
+                      <span className="text-base font-base text-[#5F6368]">
                       With breakfast
                     </span>
-                  </div>
+                    </div>
                 )}
                 {slice.primary.veranda && (
-                  <div className="flex flex-row gap-2.5 items-center justify-center">
-                    <DoorClosed className="w-4 h-4 text-[#5F6368]" />
-                    <span className="text-base font-base text-[#5F6368]">
+                    <div className="flex flex-row gap-2.5 items-center justify-center">
+                      <DoorClosed className="w-4 h-4 text-[#5F6368]"/>
+                      <span className="text-base font-base text-[#5F6368]">
                       With sharing veranda
                     </span>
-                  </div>
+                    </div>
                 )}
                 {slice.primary.lakeview && (
-                  <div className="flex flex-row gap-2.5 items-center justify-center">
-                    <Waves className="w-4 h-4 text-[#5F6368]" />
-                    <span className="text-base font-base text-[#5F6368]">
+                    <div className="flex flex-row gap-2.5 items-center justify-center">
+                      <Waves className="w-4 h-4 text-[#5F6368]"/>
+                      <span className="text-base font-base text-[#5F6368]">
                       With lakeview
                     </span>
-                  </div>
+                    </div>
                 )}
+                <div className="flex flex-row gap-2.5 items-center justify-center">
+                  <PawPrint className="w-4 h-4 text-[#5F6368]"/>
+                  <span className="text-base font-base text-[#5F6368]">
+                      Pet Friendly
+                    </span>
+                </div>
               </div>
 
               <div className="flex flex-col gap-1.5 items-start">
                 <div className="flex flex-row gap-2.5 items-center justify-center">
-                  <Clock className="w-4 h-4 text-[#5F6368]" />
+                  <Clock className="w-4 h-4 text-[#5F6368]"/>
                   <span className="text-base font-base text-[#5F6368]">
                     Check-in time: {slice.primary.checkintime}
                   </span>
