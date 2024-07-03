@@ -19,6 +19,13 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "herovideo": {
+          "type": "Embed",
+          "config": {
+            "label": "HeroVideo",
+            "placeholder": ""
+          }
         }
       },
       "items": {}

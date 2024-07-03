@@ -8,6 +8,12 @@ const nextConfig = {
                 port: '',
                 pathname: '/hotel-sixb/**',
             },
+            {
+                protocol: 'https',
+                hostname: 'vzooaoblxhvxmkjxpeve.supabase.co',
+                port: '',
+                pathname: '/storage/v1/object/public/media/**',
+            }
         ],
     },
 
