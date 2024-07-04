@@ -207,9 +207,9 @@ const RoomInformation = ({ slice }: RoomInformationProps): JSX.Element => {
         </div>
 
         {/* Form */}
-        <div className="bg-[#EBE9E9] pt-8 px-4 pb-5 rounded-2xl md:max-w-64 shadow-lg">
+        <div className="bg-[#EBE9E9] pt-8 px-4 pb-5 rounded-2xl md:max-w-fit shadow-lg">
           <h2 className="font-bold mb-5">Room Inquiry</h2>
-          <RoomInquiryForm />
+          <RoomInquiryForm room={slice.primary} />
         </div>
       </div>
     </section>

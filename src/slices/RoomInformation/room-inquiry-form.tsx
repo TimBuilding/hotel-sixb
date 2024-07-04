@@ -26,19 +26,25 @@ import { Separator } from "@/components/ui/separator";
 import { Textarea } from "@/components/ui/textarea";
 import roomInquirySchema from "@/lib/room-inquiry-schema";
 import { cn } from "@/lib/utils";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAllPrismicDocumentsByType } from "@prismicio/react";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
+import { FC, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
-import { TablesInsert } from "../../../types/database.types";
-import { createBrowserClient } from "../../../utils/supabase";
-import HCaptcha from "@hcaptcha/react-hcaptcha";
-import { useState } from "react";
-import { createClient } from "@supabase/supabase-js";
+import {
+  RoomInformationSliceDefaultPrimary,
+  Simplify,
+} from "../../../prismicio-types";
+import parseNumber from "@/lib/number-parse";
 
-const RoomInquiryForm = () => {
+interface Props {
+  room?: Simplify<RoomInformationSliceDefaultPrimary>;
+}
+
+const RoomInquiryForm: FC<Props> = ({ room }) => {
   const form = useForm<z.infer<typeof roomInquirySchema>>({
     resolver: zodResolver(roomInquirySchema),
     defaultValues: {
@@ -73,6 +79,29 @@ const RoomInquiryForm = () => {
     }
 
     setError(null);
+
+    // check if headcount is correct
+    if (room) {
+      if (parseNumber(room.headcount?.toString() || "0") < data.adults) {
+        form.setError("adults", {
+          message: `Headcount cannot exceed ${parseNumber(
+            room.headcount?.toString() || "0"
+          )}.`,
+        });
+        setIsLoading(false);
+        return;
+      }
+
+      if (parseNumber(room.kidscount?.toString() || "0") < data.children) {
+        form.setError("children", {
+          message: `Headcount cannot exceed ${parseNumber(
+            room.kidscount?.toString() || "0"
+          )}.`,
+        });
+        setIsLoading(false);
+        return;
+      }
+    }
 
     try {
       const response = await fetch("/api/submit-room-inquiry", {
@@ -213,19 +242,6 @@ const RoomInquiryForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Kids</FormLabel>
-              <FormControl>
-                <Input type="number" placeholder="Adults" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          name={"adults"}
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Adults</FormLabel>
               <FormControl>
                 <Input type="number" placeholder="Adults" {...field} />
               </FormControl>
