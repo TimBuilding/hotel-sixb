@@ -43,11 +43,11 @@
       },
       "meta_image": {
         "config": {
-          "constraint": {
-            "height": 1260,
-            "width": 2400
-          },
           "label": "Meta Image",
+          "constraint": {
+            "height": 196,
+            "width": 196
+          },
           "thumbnails": []
         },
         "type": "Image"
