@@ -52,45 +52,52 @@ export const POST = async (req: Request) => {
   const { error } = await supabase.from("room_inquiries").insert(insertData);
 
   if (error) {
-    console.log(error.message);
     return NextResponse.json(
       { error: "Failed to insert room inquiry" },
       { status: 500 }
     );
   }
 
-  // send email notification to admin
-  const mailersend = new MailerSend({
-    apiKey: process.env.MAILERSEND_API_TOKEN || "",
-  });
+  try {
+    // send email notification to admin
+    const mailersend = new MailerSend({
+      apiKey: process.env.MAILERSEND_API_TOKEN || "",
+    });
 
-  const sender = new Sender(
-    process.env.MAILERSEND_SENDER_EMAIL_ADDRESS || "",
-    "Hotel SixB"
-  );
-  const recipient = new Recipient(
-    process.env.MAILERSEND_RECIPIENT_EMAIL_ADDRESS || ""
-  );
+    const sender = new Sender(
+      process.env.MAILERSEND_SENDER_EMAIL_ADDRESS || "",
+      "Hotel SixB"
+    );
+    const recipient = new Recipient(
+      process.env.MAILERSEND_RECEIPIENT_EMAIL_ADDRESS || ""
+    );
 
-  const emailParams = new EmailParams()
-    .setFrom(sender)
-    .setTo([recipient])
-    .setSubject("New room inquiry").setText(`New room inquiry details:
-      Name: ${data.name}
-      Email: ${data.email}
-      Phone: ${data.phone}
-      Check-in Date: ${data.checkInDate}
-      Check-out Date: ${data.checkOutDate}
-      Adults: ${data.adults}
-      Children: ${data.children}
-      Room Type: ${data.roomType}
-      Number of Rooms: ${data.numberOfRooms}
-      Message: ${data.message}`);
+    const emailParams = new EmailParams()
+      .setFrom(sender)
+      .setTo([recipient])
+      .setSubject("New room inquiry").setText(`New room inquiry details:
+        Name: ${data.name}
+        Email: ${data.email}
+        Phone: ${data.phone}
+        Check-in Date: ${data.checkInDate}
+        Check-out Date: ${data.checkOutDate}
+        Adults: ${data.adults}
+        Children: ${data.children}
+        Room Type: ${data.roomType}
+        Number of Rooms: ${data.numberOfRooms}
+        Message: ${data.message}`);
 
-  await mailersend.email.send(emailParams);
+    await mailersend.email.send(emailParams);
 
-  return NextResponse.json(
-    { message: "Room inquiry submitted successfully" },
-    { status: 200 }
-  );
+    return NextResponse.json(
+      { message: "Room inquiry submitted successfully" },
+      { status: 200 }
+    );
+  } catch (err) {
+    console.log(err);
+    return NextResponse.json(
+      { error: "Failed to send email" },
+      { status: 500 }
+    );
+  }
 };

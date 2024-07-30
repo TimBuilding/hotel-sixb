@@ -64,9 +64,12 @@ export const POST = async (req: NextRequest) => {
       apiKey: process.env.MAILERSEND_API_TOKEN || "",
     });
 
-    const sender = new Sender(process.env.MAILERSEND_SENDER_EMAIL_ADDRESS || "", 'Hotel SixB');
+    const sender = new Sender(
+      process.env.MAILERSEND_SENDER_EMAIL_ADDRESS || "",
+      "Hotel SixB"
+    );
     const recipient = new Recipient(
-      process.env.MAILERSEND_RECIPIENT_EMAIL_ADDRESS || ""
+      process.env.MAILERSEND_RECEIPIENT_EMAIL_ADDRESS || ""
     );
 
     const emailParams = new EmailParams()
