@@ -21,7 +21,7 @@ const RoomsHomepage = ({slice}: RoomsHomepageProps): JSX.Element => {
         >
             <div className="md:hidden">
                 <div
-                    className={cn(slice.variation === 'default' ? 'flex-row' : 'flex-row-reverse ', "flex gap-10 bg-zinc-100")}>
+                    className={cn(slice.variation === 'default' ? 'flex-row' : 'flex-row-reverse ', "flex bg-zinc-100")}>
                     <div
                         className={cn(slice.variation === 'default' ? 'p-8' : 'px-3 py-8', "flex flex-col gap-5 w-1/2")}>
                         <h2 className="font-semibold text-sm">{slice.primary.title}</h2>
